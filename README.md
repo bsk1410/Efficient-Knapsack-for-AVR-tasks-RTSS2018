@@ -16,8 +16,9 @@ choose one of [1,2,3] for taskset_number. Default 1.
 
 ## Features
 
-- Knapsack-based AVR Task Demand Calculation
-- Implementation of Digraph Real-Time task model demand calculations as found [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+- Knapsack-based AVR Task Demand Calculation Python3 implementation as found in Bijinemula et al.
+- Digraph Real-Time task model demand calculations Python3 implementation as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+- Graphed comparison of above implementations using matplotlib
 
 ## Getting Started
 
