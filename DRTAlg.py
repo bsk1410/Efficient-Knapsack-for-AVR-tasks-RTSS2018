@@ -75,30 +75,52 @@ for i in range(len(boundarySpeeds)):
         speed = speed + 2*a_min             #Add subsequent, decreasing speed via a_min
 nodeSpeeds = sorted(nodeSpeeds)         #Nodes sorted by speed increasing order
 
+#Setup nodes
 nodes = []
-for i,j in zip(nodeSpeeds[:-1],nodeSpeeds[1:]):
-    nodes.append((i,j))
 
-adjMatrix = dict()
-for i in range(len(nodes)):
-    currentRB = nodes[i][1]
-    for j in range(i,len(nodes)):
-        nextRB = nodes[j][1]
-        maxReach = currentRB + 2*a_max
+for i,j in zip(nodeSpeeds[:-1],nodeSpeeds[1:]): #For each tuple in a list of created tuples
+    nodes.append((i,j))                             #Add each tuple to nodes
+
+adjMatrix = dict()  #Empty adjacency matrix
+
+for i in range(len(nodes)):                 #For every node tuple
+    currentRB = nodes[i][1]                     #Select right boundary
+    for j in range(i,len(nodes)):               #Iterate through all possible next right boundaries
+        nextRB = nodes[j][1]                        #Select next right boundary
+        maxReach = currentRB + 2*a_max              #Calculate maximum next speed
+
+        #If next right boundary is not reachable, break
         if nextRB > maxReach:
             break
-            
-        if nextRB == maxReach:
-            adjMatrix[(i,j)] = 60*(sqrt(nextRB)-sqrt(currentRB))/a_max
+
+        #If next right boundary is reachable via constant a_max...
+        if nextRB == maxReach: 
+            #Calculate minimum interarrival time - Mohaqeqi et al. Sec. 3.2 Case 2
+            adjMatrix[(i,j)] = 60*(sqrt(nextRB)-sqrt(currentRB))/a_max 
+
+        #...otherwise, the next right boundary is reachable via variable acceleration
         else:
+            #Calculate the prospective peak speed
             midSpeed = (2*a_min*a_max+a_min*currentRB-a_max*nextRB)/(a_min-a_max)
+
+            #If the prospective peak speed does not exceed maximum speed...
             if midSpeed <= maxSpeed:
+                #Calculate3 minimum interarrival time in seconds - Mohaqeqi et al. Sec 3.2 Eqn 20
                 adjMatrix[(i,j)] = 60*((sqrt(midSpeed)-sqrt(currentRB))/a_max +(sqrt(nextRB)-sqrt(midSpeed))/a_min)
+
+            #...otherwise, the prospective peak speed exceeds maximum speed
             else:
+                #Calculate the time to reach maximum speed - Mohaqeqi et al. Sec. 3.2 Eqn 21 t_1^*
                 t1 = (sqrt(maxSpeed) - sqrt(currentRB))/a_max
+                #Calculate the time over which maximum speed is maintained - Mohaqeqi et al. Sec. 3.2 Eqn 21 t_2^*
                 t2 = (1-((maxSpeed-currentRB)/(2*a_max))-((nextRB-maxSpeed)/(2*a_min)))/sqrt(maxSpeed)
+                #Calculate the time to descend from maximum speed to final speed - Mohaqeqi et al. Sec. 3.2 Eqn 21 t_3^*
                 t3 = (sqrt(nextRB)-sqrt(maxSpeed))/a_min
+
+                #Sum individual time segments and conver to seconds
                 adjMatrix[(i,j)] = 60*(t1 + t2 + t3)
+
+        #Mirror adjacency matrix
         adjMatrix[(j,i)] = adjMatrix[(i,j)]
         
 #Dictionary for logging speeds, completion times - Supports dynamic programming.
@@ -115,29 +137,44 @@ def calc_demand(i,time):
     if i in hashTable.keys():
         if time in hashTable[i].keys():
             return hashTable[i][time]
-        
+    
+    #If node is not the first right bounday speed...
     if nodes[i][1]!=boundarySpeeds[0]:
+        #Assign execution time based on index
         demNode = executionTimes[bisect_left(boundarySpeeds,nodes[i][1])-1]
+    #...otherwise, assign first execution time
     else:
         demNode = executionTimes[0]
     
+    #Iterate through all nodes
     for j in range(len(nodes)):
+
+        #If the node pair selected is reachable from each other...
         if (i,j) in adjMatrix.keys():
+
+            #Extract the time required to reach the next node
             timeNextNode = adjMatrix[(i,j)]
             
+            #If insufficient time remains to reach the next node...
             if time - timeNextNode < 0:
+                #Do not count towards demand, try next node
                 continue
             
+            #If time remaining is exactly the required time...
             if time - timeNextNode == 0:
+                #Update demand if necessary and continue
                 if demNode > demand_max:
                     demand_max = demNode
                     continue
             
+            #Calculate new demand
             demand = demNode + calc_demand(j,time-timeNextNode)
         
+            #Update demand if necessary
             if demand > demand_max:
                 demand_max = demand
     
+    #Update hash table with max demand and return
     hashTable[i][time] = demand_max
     return demand_max
 
