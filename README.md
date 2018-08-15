@@ -151,7 +151,7 @@ Independent of which installation method was used to setup dependencies and the 
 
 #### Adaptive Variable Rate (AVR) Demand Profiles
 
-An Adaptive Variable Rate (AVR) Demand Profile specifies Worst-Case Execution Times (WCETs) for the speed ranges between right boundaries. To change the AVR Demand Profile, edit line 3 of taskset.json,
+An Adaptive Variable Rate (AVR) Demand Profile specifies Worst-Case Execution Times (WCETs) for the speed ranges between right boundaries. To change the AVR Demand Profile, edit line 3 of `taskset.json`,
 
 ```json
 "executionTimes": [965, 576, 424, 343, 277, 246],
@@ -163,10 +163,10 @@ _Note: Custom execution times will be sorted in descending order. By default, no
 
 #### Right Boundary Speed Profiles
 
-A Right Boundary Speed profile specifies the speed ranges across which Worst-Case Execution Times (WCETs) are uniform. To change the Right Boundary Speed Profile, edit line 2 of taskset.json,
+A Right Boundary Speed profile specifies the speed ranges across which Worst-Case Execution Times (WCETs) are uniform. To change the Right Boundary Speed Profile, edit line 2 of `taskset.json`,
 
 ```json
-	"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
+"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
 ```
 
 and replace the default boundary speeds with your own.
@@ -176,7 +176,15 @@ _Note: Custom right boundary speed profiles __must have one less element__ than 
 
 #### Knapsack-Based Demand Analysis
 
+#### Single Run
+
+#### Multi-Run
+
 #### Digraph-Real-Time-Based Demand Analysis
+
+##### Single Run
+
+##### Multi-Run
 
 ## Publication Information
 
