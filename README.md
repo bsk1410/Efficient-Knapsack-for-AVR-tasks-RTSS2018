@@ -16,8 +16,9 @@ choose one of [1,2,3] for taskset_number. Default 1.
 
 ## Features
 
-- Knapsack-based AVR Task Demand Calculation
-- Implementation of Digraph Real-Time task model demand calculations as found [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+- Knapsack-based AVR Task Demand Calculation Python3 implementation as found in Bijinemula et al.
+- Digraph Real-Time task model demand calculations Python3 implementation as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+- Graphed comparison of above implementations using matplotlib
 
 ## Getting Started
 
@@ -28,7 +29,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | [Python3](https://www.python.org/) | 3.6.5 |
 | [pip](https://pypi.org/project/pip/) | 9.0.1 |
 | [NumPy](http://www.numpy.org/) | 1.13.3 |
-| [PyPlot](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
+| [matplotlib](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
 
 ### Tested System Specifications
 
@@ -39,7 +40,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | CPU | Intel Core i7-6700 CPU @ 3.40 GHz x 8 |
 | RAM | 8GB (7.7GB Available) |
 
-### Selecting an Installation Method:
+### Selecting an Installation Method
 
 __Option 1) Open Virtual Appliance (OVA) with Pre-Installed Dependencies.__  
 Users may download an OVA with dependencies pre-installed and GitHub code / contents pre-downloaded.
@@ -68,8 +69,8 @@ Users may install dependencies and download GitHub code / contents on their own 
 | ------ | ----------- |
 | OS | Ubuntu 18.04 LTS |
 | Arch | 64-bit |
-| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 2__ |
-| RAM | __4GB (3.9GB Available)__ |
+| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 4__ |
+| RAM | __8GB (7.8GB Available)__ |
 
 </td></tr> </table>
 
@@ -100,6 +101,8 @@ Password:   RTSS2018
 
 ### Dependency Installation
 
+#### Step-By-Step Installation
+
 Installing [Python3](https://www.python.org/) Ubuntu [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
 
 ```sh
@@ -119,7 +122,7 @@ Installing [NumPy](http://www.numpy.org/) via pip [[2](https://askubuntu.com/que
 sudo pip3 install -U numpy
 ```
 
-Installing [PyPlot](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
+Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
 
 ```sh
 sudo pip3 install -U matplotlib
@@ -131,17 +134,16 @@ Checking [Python3](https://www.python.org/) Version [[4](https://askubuntu.com/q
 python3 --version
 ```
 
-Checking [NumPy](http://www.numpy.org/) Version [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
+Checking [NumPy](http://www.numpy.org/) Version in python3 [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
 
-```sh
-python3
+```python3
 >>>import numpy
 >>>numpy.version.version
 ```
-Checking [PyPlot](https://matplotlib.org/api/pyplot_summary.html) Version [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
 
-```
-python3 
+Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+
+```python3
 >>>import matplotlib
 >>>print('matplotlib: {}'.format(matplotlib.__version__))
 ```
@@ -152,6 +154,15 @@ python3
 [[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
 [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
+
+#### Single-Script Installation
+
+Combining the above step-by-step installation into a single command gives:
+
+```sh
+sudo apt-get update &&
+sudo apt-get install python3 python3-pip && pip3 install -U numpy matplotlib
+```
 
 ## Running Demand Analysis
 
@@ -188,19 +199,12 @@ A Right Boundary Speed profile specifies the speed ranges across which Worst-Cas
 and replace the default boundary speeds with your own.
 
 _Note: Custom right boundary speed profiles __must have one less element__ than the AVR Demand profile._
+
 ### Executing Demand Analysis
 
 #### Knapsack-Based Demand Analysis
 
-#### Single Run
-
-#### Multi-Run
-
 #### Digraph-Real-Time-Based Demand Analysis
-
-##### Single Run
-
-##### Multi-Run
 
 ## Publication Information
 
