@@ -28,7 +28,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | [Python3](https://www.python.org/) | 3.6.5 |
 | [pip](https://pypi.org/project/pip/) | 9.0.1 |
 | [NumPy](http://www.numpy.org/) | 1.13.3 |
-| [PyPlot](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
+| [matplotlib](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
 
 ### Tested System Specifications
 
@@ -119,7 +119,7 @@ Installing [NumPy](http://www.numpy.org/) via pip [[2](https://askubuntu.com/que
 sudo pip3 install -U numpy
 ```
 
-Installing [PyPlot](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
+Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
 
 ```sh
 sudo pip3 install -U matplotlib
@@ -138,7 +138,7 @@ python3
 >>>import numpy
 >>>numpy.version.version
 ```
-Checking [PyPlot](https://matplotlib.org/api/pyplot_summary.html) Version [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
 
 ```
 python3 
