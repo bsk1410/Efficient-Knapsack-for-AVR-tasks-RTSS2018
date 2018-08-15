@@ -61,17 +61,19 @@ maxSpeed = boundarySpeeds[-1]
 
 #Setup nodeSpeeds
 nodeSpeeds = set()
+
+#Iterate through all boundary speeds
 for i in range(len(boundarySpeeds)):
-    speed = boundarySpeeds[i]
-    while speed <= boundarySpeeds[-1]:
-        nodeSpeeds.add(speed)
-        speed = speed + 2*a_max
+    speed = boundarySpeeds[i]           #Select boundary speed
+    while speed <= maxSpeed:            #While speed has not exceed maxspeed
+        nodeSpeeds.add(speed)               #Create node for speed
+        speed = speed + 2*a_max             #Add subsequent, increasing speed via a_max
     
-    speed = boundarySpeeds[i]
-    while speed>=boundarySpeeds[0]:
-        nodeSpeeds.add(speed)
-        speed = speed + 2*a_min
-nodeSpeeds = sorted(nodeSpeeds)
+    speed = boundarySpeeds[i]           #Select boundary speed
+    while speed>=boundarySpeeds[0]:     #While speed has not fallen below the lowest boundary speed
+        nodeSpeeds.add(speed)               #Create node for speed
+        speed = speed + 2*a_min             #Add subsequent, decreasing speed via a_min
+nodeSpeeds = sorted(nodeSpeeds)         #Nodes sorted by speed increasing order
 
 nodes = []
 for i,j in zip(nodeSpeeds[:-1],nodeSpeeds[1:]):
