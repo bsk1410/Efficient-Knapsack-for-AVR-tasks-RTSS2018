@@ -3,9 +3,9 @@ from time import perf_counter               #Performance counter - clock with hi
 from math import sqrt                       #Square root
 from collections import defaultdict         #Dictionary that does not throw KeyErrors
 import numpy as np                          #http://www.numpy.org/
-import argparse 					        #To read command line arguments
+import argparse                             #To read command line arguments
 from bisect import bisect_left              #Provides would-be index of element to insert
-import json							        #To read the input taskset file
+import json                                 #To read the input taskset file
 from argparse import RawTextHelpFormatter   #Argument Parser help formatting
 import sys                                  #Exit command
 
