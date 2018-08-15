@@ -39,7 +39,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | CPU | Intel Core i7-6700 CPU @ 3.40 GHz x 8 |
 | RAM | 8GB (7.7GB Available) |
 
-### Selecting an Installation Method:
+### Selecting an Installation Method
 
 __Option 1) Open Virtual Appliance (OVA) with Pre-Installed Dependencies.__  
 Users may download an OVA with dependencies pre-installed and GitHub code / contents pre-downloaded.
@@ -139,6 +139,7 @@ Checking [NumPy](http://www.numpy.org/) Version in python3 [[5](https://stackove
 >>>import numpy
 >>>numpy.version.version
 ```
+
 Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
 
 ```python3
@@ -197,19 +198,12 @@ A Right Boundary Speed profile specifies the speed ranges across which Worst-Cas
 and replace the default boundary speeds with your own.
 
 _Note: Custom right boundary speed profiles __must have one less element__ than the AVR Demand profile._
+
 ### Executing Demand Analysis
 
 #### Knapsack-Based Demand Analysis
 
-#### Single Run
-
-#### Multi-Run
-
 #### Digraph-Real-Time-Based Demand Analysis
-
-##### Single Run
-
-##### Multi-Run
 
 ## Publication Information
 
