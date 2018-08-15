@@ -100,6 +100,8 @@ Password:   RTSS2018
 
 ### Dependency Installation
 
+#### Step-By-Step Installation
+
 Installing [Python3](https://www.python.org/) Ubuntu [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
 
 ```sh
@@ -131,17 +133,15 @@ Checking [Python3](https://www.python.org/) Version [[4](https://askubuntu.com/q
 python3 --version
 ```
 
-Checking [NumPy](http://www.numpy.org/) Version [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
+Checking [NumPy](http://www.numpy.org/) Version in python3 [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
 
-```sh
-python3
+```python3
 >>>import numpy
 >>>numpy.version.version
 ```
-Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
 
-```
-python3 
+```python3
 >>>import matplotlib
 >>>print('matplotlib: {}'.format(matplotlib.__version__))
 ```
@@ -152,6 +152,15 @@ python3
 [[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
 [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
+
+#### Single-Script Installation
+
+Combining the above step-by-step installation into a single command gives:
+
+```sh
+sudo apt-get update &&
+sudo apt-get install python3 python3-pip && pip3 install -U numpy matplotlib
+```
 
 ## Running Demand Analysis
 
