@@ -41,4 +41,3 @@ plt.legend()
 
 #Show plot to user
 plt.show()
-
