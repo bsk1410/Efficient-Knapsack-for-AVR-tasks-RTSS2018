@@ -28,6 +28,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | [Python3](https://www.python.org/) | 3.6.5 |
 | [pip](https://pypi.org/project/pip/) | 9.0.1 |
 | [NumPy](http://www.numpy.org/) | 1.13.3 |
+| [PyPlot](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
 
 ### Tested System Specifications
 
@@ -118,24 +119,39 @@ Installing [NumPy](http://www.numpy.org/) via pip [[2](https://askubuntu.com/que
 sudo pip3 install -U numpy
 ```
 
-Checking [Python3](https://www.python.org/) Version [[3](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
+Installing [PyPlot](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
+
+```sh
+sudo pip3 install -U matplotlib
+```
+
+Checking [Python3](https://www.python.org/) Version [[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
 
 ```sh
 python3 --version
 ```
 
-Checking [NumPy](http://www.numpy.org/) Version [[4](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
+Checking [NumPy](http://www.numpy.org/) Version [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
 
 ```sh
 python3
 >>>import numpy
 >>>numpy.version.version
 ```
+Checking [PyPlot](https://matplotlib.org/api/pyplot_summary.html) Version [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+
+```
+python3 
+>>>import matplotlib
+>>>print('matplotlib: {}'.format(matplotlib.__version__))
+```
 
 [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
 [[2](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
-[[3](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
-[[4](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)
+[[3](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
+[[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
+[[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
+[[6](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
 
 ## Running Demand Analysis
 
