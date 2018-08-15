@@ -62,7 +62,7 @@ maxSpeed = boundarySpeeds[-1]
 #Setup nodeSpeeds
 nodeSpeeds = set()
 
-#Iterate through all boundary speeds
+#Iterate through all boundary speeds, creating nodes for all reachable speeds
 for i in range(len(boundarySpeeds)):
     speed = boundarySpeeds[i]           #Select boundary speed
     while speed <= maxSpeed:            #While speed has not exceed maxspeed
@@ -81,7 +81,7 @@ nodes = []
 for i,j in zip(nodeSpeeds[:-1],nodeSpeeds[1:]): #For each tuple in a list of created tuples
     nodes.append((i,j))                             #Add each tuple to nodes
 
-adjMatrix = dict()  #Empty adjacency matrix
+adjMatrix = dict()  #Empty adjacency matrix for creating DRT graph
 
 for i in range(len(nodes)):                 #For every node tuple
     currentRB = nodes[i][1]                     #Select right boundary
