@@ -59,21 +59,22 @@ start = perf_counter()
 boundarySpeeds = [speed**2 for speed in boundarySpeeds]
 maxSpeed = boundarySpeeds[-1]
 
-nodespeeds = set()
+#Setup nodeSpeeds
+nodeSpeeds = set()
 for i in range(len(boundarySpeeds)):
     speed = boundarySpeeds[i]
     while speed <= boundarySpeeds[-1]:
-        nodespeeds.add(speed)
+        nodeSpeeds.add(speed)
         speed = speed + 2*a_max
     
     speed = boundarySpeeds[i]
     while speed>=boundarySpeeds[0]:
-        nodespeeds.add(speed)
+        nodeSpeeds.add(speed)
         speed = speed + 2*a_min
-nodespeeds = sorted(nodespeeds)
+nodeSpeeds = sorted(nodeSpeeds)
 
 nodes = []
-for i,j in zip(nodespeeds[:-1],nodespeeds[1:]):
+for i,j in zip(nodeSpeeds[:-1],nodeSpeeds[1:]):
     nodes.append((i,j))
 
 adjMatrix = dict()
