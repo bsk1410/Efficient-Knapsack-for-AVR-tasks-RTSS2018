@@ -1,53 +1,53 @@
-from time import perf_counter           #Performance counter - clock with highest available resolution
-from math import sqrt                   #Square root
-from bisect import bisect_left          #to find the first element greater than a given number in a list
-from collections import defaultdict     #Dictionary that does not throw KeyErrors
-import numpy as np                      #http://www.numpy.org/
-import argparse                         #To read command line arguments
-import json                             #To read the input taskset file
-import sys
+#Dependencies
+from time import perf_counter               #Performance counter - clock with highest available resolution
+from math import sqrt                       #Square root
+from collections import defaultdict         #Dictionary that does not throw KeyErrors
+import numpy as np                          #http://www.numpy.org/
+import argparse 					        #To read command line arguments
+from bisect import bisect_left              #Provides would-be index of element to insert
+import json							        #To read the input taskset file
+from argparse import RawTextHelpFormatter   #Argument Parser help formatting
+import sys                                  #Exit command
 
 #Units
 #a_max, a_min - revolutions / min^2
 #speed, peak_speed, speed_new - revolutions / minute (RPM)
+
+#Acceleration equal in magnitude to deceleration per Bijinemula et al. Sec. III.A Para. 4 
 a_max = 600000
-a_min = -600000
+a_min = -a_max
 
-#Execution time values (micro seconds) from the Mohaqeqi et al. - http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf
-executionTimes = [965,576,424,343,277,246]
+#Execution time values (micro seconds) from Mohaqeqi et al. Table 18 - http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf
+executionTimes = [965, 576, 424, 343, 277, 246]
 
-a_max = 600000
-a_min = -600000
-
-#parse input arguments
-parser = argparse.ArgumentParser(description='Run the algorithm by Bijinemula et al.')
-parser.add_argument('-t','--taskset',choices=['1','2','3'],metavar='',default='1',help ='Enter the taskset to run the algorithm on. For a new taskset enter -t 3 -i <space separated filename>')
+#Parse Command-Line Arguments
+parser = argparse.ArgumentParser(description='Run the Knapsack-Based AVR Task Demand Calculation algorithm by Bijinemula et al.', formatter_class=RawTextHelpFormatter)
+parser.add_argument('-t','--taskset',choices=['1','2','3'],metavar='#',default='1',help ='Enter the taskset number to run the algorithm on.\n1 - Use Task Set #1 in Bijinemula et al.\n2 - Use Task Set #2 in Bijinemula et al.\n3 - Use a custom task set defined in \'taskset.json\'')
 parser.add_argument('-v','--verbose',action='store_true',help='Get detailed output')
 args = parser.parse_args()
 
-if args.taskset == '1':
+if args.taskset == '1':     #Use boundary speeds of Taskset 1 in Bijinemula et al. Table I
     boundarySpeeds = range(500,7500,1000)
-elif args.taskset == '2':
-    #boundary speeds of taskset-2 in Bijinemula et al.
+elif args.taskset == '2':   #Use boundary speeds of Taskset 2 in Bijinemula et al. Table II
     boundarySpeeds = range(1200,8200,1000)
 else:
-    #custom taskset
+    #Open Custom Task Set
     with open('taskset.json') as f:
         taskset = json.load(f)
 
-    #sort the boundary speeds so that they are in increasing order
+    #Sort Right Boundary Speeds in increasing order
     boundarySpeeds = sorted(taskset['boundarySpeeds'])
-    #sort the execution times so that they are in decreasing order
-    executionTimes = sorted(taskset['executionTimes'], reverse=True)
-    a_max = taskset['a_max']
-    a_min = taskset['a_min']
 
+    #Sort execution times in decreasing order
+    executionTimes = sorted(taskset['executionTimes'], reverse=True)
+    
+    #Set accelerations equal in magnitude
+    a_max = taskset['a_max']
+    a_min = -a_max
+
+    #Validate # Right Boundary Speeds is one more than # Execution Times 
     if len(boundarySpeeds) != len(executionTimes)+1:
         print('Error: The number of boundary speeds should be one more than the number of execution times.')
-        sys.exit(0)
-
-    if a_max != -a_min:
-        print('Error: The magnitude of a_max and a_min should be the same as mentioned in the paper.')
         sys.exit(0)
 
 #Start timer
