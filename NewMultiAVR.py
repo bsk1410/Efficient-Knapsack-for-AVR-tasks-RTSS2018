@@ -17,7 +17,7 @@ def NewMultiAVRgen():
     for M in range(6,16):
         a_max = 600000
         a_min = -600000
-        fileMname = 'NewAlg_Multi_'+str(M)+'.txt'
+        fileMname = 'NewMultiAVROutputs/NewAlg_Multi_'+str(M)+'.txt'
         
         start1 = perf_counter()
         random.seed(100)

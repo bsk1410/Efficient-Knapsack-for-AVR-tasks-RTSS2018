@@ -13,7 +13,7 @@ def DRTMultiAVRgen(M):
     #M = int(sys.argv[1])
     a_max = 600000
     a_min = -600000
-    fileMname = 'DRTAlgo_MultiAVR'+str(M)+'.txt'
+    fileMname = 'DRTMultiAVROutputs/DRTAlg_MultiAVR'+str(M)+'.txt'
 
     # start1 = perf_counter()
     random.seed(100)

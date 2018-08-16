@@ -1,13 +1,13 @@
 #Dependencies
-import NewAlgMultipleAVRTests.NewAlg_MultiAVR
-import DRTAlgMultiAVRTests.DRTAlg_MultiAVR
+import NewMultiAVR
+import DRTMultiAVR
 import plotGraphs
 
 #Run NewAlg for Mode count 6 through 15
-NewAlgMultipleAVRTests.NewAlg_MultiAVR.NewMultiAVRgen()
+NewMultiAVR.NewMultiAVRgen()
 
 #Run DRT Alg
-DRTAlgMultiAVRTests.DRTAlg_MultiAVR.DRTMultiAVRgen(1)
+DRTMultiAVR.DRTMultiAVRgen(1)
 
 #Compare Graphs
 plotGraphs.multiAVRPlot()
