@@ -73,6 +73,8 @@ choose one of [1,2,3] for taskset_number. Default 1.
 
 8. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
+_Note: Completion time for one run may take at least 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
+
 ### B) Manual Install (Ubuntu 18.04)
 
 1. Run the following shell script in linux terminal and enter the appropriate credentials when prompted:
@@ -96,6 +98,8 @@ choose one of [1,2,3] for taskset_number. Default 1.
     ```
 
 4. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
+
+_Note: Completion time for one run will take around of 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
 
 ## Getting Started
 
