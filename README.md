@@ -146,63 +146,70 @@ Password:   RTSS2018
 
 #### Step-By-Step Installation
 
-Installing [git](https://git-scm.com/) [[0](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
+Installing [git](https://git-scm.com/) [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
 
 ```sh
 sudo apt-get install git
 ```
 
-Installing [Python3](https://www.python.org/) [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
+Installing [Python3](https://www.python.org/) [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
 
 ```sh
 sudo apt-get update
 sudo apt-get install python3
 ```
 
-Installing [pip](https://pypi.org/project/pip/) [[2](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+Installing [pip](https://pypi.org/project/pip/) [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
 
 ```sh
 sudo apt-get install python-pip python3-pip
 ```
 
-Installing [NumPy](http://www.numpy.org/) via pip [[2](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+Installing [Tkinter](https://wiki.python.org/moin/TkInter) [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)]:
+
+```sh
+sudo apt-get install python3-tk
+```
+
+Installing [NumPy](http://www.numpy.org/) via pip [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
 
 ```sh
 sudo pip3 install -U numpy
 ```
 
-Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[3](https://matplotlib.org/users/installing.html)]:
+Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[5](https://matplotlib.org/users/installing.html)]:
 
 ```sh
 sudo pip3 install -U matplotlib
 ```
 
-Checking [Python3](https://www.python.org/) Version [[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
+Checking [Python3](https://www.python.org/) Version [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
 
 ```sh
 python3 --version
 ```
 
-Checking [NumPy](http://www.numpy.org/) Version in python3 [[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
+Checking [NumPy](http://www.numpy.org/) Version in python3 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
 
 ```python3
 >>>import numpy
 >>>numpy.version.version
 ```
 
-Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[6](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[8](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
 
 ```python3
 >>>import matplotlib
 >>>print('matplotlib: {}'.format(matplotlib.__version__))
 ```
-[[0](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
-[[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
-[[2](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
-[[3](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
-[[4](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
-[[5](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
-[[6](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
+[[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
+[[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
+[[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
+[[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
+[[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
+[[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
+[[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
+[[8](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
 
 #### Single-Script Installation
 
@@ -210,7 +217,7 @@ Combining the above step-by-step installation into a single command gives:
 
 ```sh
 sudo apt-get update &&
-sudo apt-get install git python3 python3-pip && pip3 install -U numpy matplotlib
+sudo apt-get install git python3 python3-pip python3-tk && pip3 install -U numpy matplotlib
 ```
 
 ## Running Demand Analysis
