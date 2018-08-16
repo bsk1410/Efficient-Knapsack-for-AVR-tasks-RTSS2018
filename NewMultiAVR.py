@@ -63,55 +63,55 @@ def NewMultiAVRgen():
         #print('Time Taken to compute Random values is ', (end1-start1)*1000)    
         #continue
         #Start timer
-    start = perf_counter()
+        start = perf_counter()
 
-    #Boundary Speeds
-        #Squares of right boundary speeds used to avoid repeated sqrt computation later
-        #Speeds in the first step are not counted per Lemma 2 - start from first right boundary speed
-    rightBoundarySpeeds =[speed**2 for speed in rightBoundarySpeeds[1:]]
+        #Boundary Speeds
+            #Squares of right boundary speeds used to avoid repeated sqrt computation later
+            #Speeds in the first step are not counted per Lemma 2 - start from first right boundary speed
+        rightBoundarySpeeds =[speed**2 for speed in rightBoundarySpeeds[1:]]
 
-    #Case Flags
-    #3 - The initial speed is one of the right boundary speeds and the next job release is at the same speed
-    #2 - The initial speed is not a right boundary speed and variable acceleration is to be used
-    #1 - Maximum Acceleration is used
+        #Case Flags
+        #3 - The initial speed is one of the right boundary speeds and the next job release is at the same speed
+        #2 - The initial speed is not a right boundary speed and variable acceleration is to be used
+        #1 - Maximum Acceleration is used
 
-    #Helper function to calculate the minimum interarrival time given the initial and final speed - Based on the formulae in Mohaqeqi et al.
-    def calc_min_time(speed,speed_new,flag):
+        #Helper function to calculate the minimum interarrival time given the initial and final speed - Based on the formulae in Mohaqeqi et al.
+        def calc_min_time(speed,speed_new,flag):
 
-        #If speed is a right boundary speed and speed_new is equal to speed...
-        if flag == 3:
-            peak_speed = speed+a_max
+            #If speed is a right boundary speed and speed_new is equal to speed...
+            if flag == 3:
+                peak_speed = speed+a_max
 
-            #If peak_speed does not exceed maximum speed...
-            if peak_speed <= rightBoundarySpeeds[-1]:
-                #From Mohaquqi et al. Eqn (20) - Accelerate maximimally to peak_speed, decelerate maximally back to speed
-                min_time = (sqrt(peak_speed)-sqrt(speed))/a_max + (sqrt(speed)-sqrt(peak_speed))/a_min
+                #If peak_speed does not exceed maximum speed...
+                if peak_speed <= rightBoundarySpeeds[-1]:
+                    #From Mohaquqi et al. Eqn (20) - Accelerate maximimally to peak_speed, decelerate maximally back to speed
+                    min_time = (sqrt(peak_speed)-sqrt(speed))/a_max + (sqrt(speed)-sqrt(peak_speed))/a_min
+                
+                #...otherwise peak_speed exceeds maximum speed.
+                else:
+                    #Maintain constant speed
+                    min_time = 1/sqrt(speed)
+
+                #Return minimum time in seconds
+                return min_time*60
             
-            #...otherwise peak_speed exceeds maximum speed.
+            #...otherwise, initial speed is not a right boundary speed.
             else:
-                #Maintain constant speed
-                min_time = 1/sqrt(speed)
+                #From Mohaqeqi et al. Eqn (19) - Case 4 Rotational Speed
+                peak_speed = (2*a_max*a_min+a_min*speed-a_max*speed_new)/(a_min-a_max)
 
-            #Return minimum time in seconds
-            return min_time*60
-        
-        #...otherwise, initial speed is not a right boundary speed.
-        else:
-            #From Mohaqeqi et al. Eqn (19) - Case 4 Rotational Speed
-            peak_speed = (2*a_max*a_min+a_min*speed-a_max*speed_new)/(a_min-a_max)
+                #If peak_speed does not exceed maximum speed...
+                if peak_speed <= rightBoundarySpeeds[-1]:
+                    #From Mohaquqi et al. Eqn (20) - Accelerate maximally to peak_speed, decelerate maximally back to speed.
+                    min_time = (sqrt(peak_speed)-sqrt(speed))/a_max + (sqrt(speed_new)-sqrt(peak_speed))/a_min
 
-            #If peak_speed does not exceed maximum speed...
-            if peak_speed <= rightBoundarySpeeds[-1]:
-                #From Mohaquqi et al. Eqn (20) - Accelerate maximally to peak_speed, decelerate maximally back to speed.
-                min_time = (sqrt(peak_speed)-sqrt(speed))/a_max + (sqrt(speed_new)-sqrt(peak_speed))/a_min
-
-            #...otherwise, peak_speed exceeds maximum speed.
-            else:
-                #From Mohaqeqi et al. Eqn (21) - Accelerate maximally to maximum allowable speed, decelerate maximally back to speed.
-                min_time = ((sqrt(rightBoundarySpeeds[-1])-sqrt(speed))/a_max) + ((1 - ((rightBoundarySpeeds[-1]-speed)/(2*a_max))-((speed_new-rightBoundarySpeeds[-1])/(2*a_min)))/sqrt(rightBoundarySpeeds[-1])) + ((sqrt(speed_new)-sqrt(rightBoundarySpeeds[-1]))/a_min)
-            
-            #Return minimum time in seconds
-            return min_time*60
+                #...otherwise, peak_speed exceeds maximum speed.
+                else:
+                    #From Mohaqeqi et al. Eqn (21) - Accelerate maximally to maximum allowable speed, decelerate maximally back to speed.
+                    min_time = ((sqrt(rightBoundarySpeeds[-1])-sqrt(speed))/a_max) + ((1 - ((rightBoundarySpeeds[-1]-speed)/(2*a_max))-((speed_new-rightBoundarySpeeds[-1])/(2*a_min)))/sqrt(rightBoundarySpeeds[-1])) + ((sqrt(speed_new)-sqrt(rightBoundarySpeeds[-1]))/a_min)
+                
+                #Return minimum time in seconds
+                return min_time*60
 
         #Dictionary for logging speeds, flags, execution times, release times - Supports dynamic programming.
         #Speeds in "itemSet" are saved as RPM
@@ -268,8 +268,7 @@ def NewMultiAVRgen():
         ##Recursive Demand Calculation
         #Initialization
         max_demand = 0
-        #f = open('NewAlgoOutput.txt','w')
-        
+
         #For every 0.01 timestep in [0.01,1.01)
         for tot_time in np.arange(0.01,1.01,0.01):
 
@@ -288,7 +287,6 @@ def NewMultiAVRgen():
             #print('Max demand for time: {} = {}'.format(tot_time,max_demand))
             #f.write('Max demand for time: {} = {}\n'.format(tot_time,max_demand))
         #f.close()
-
         #End performance counting, calculate and log total time
         end = perf_counter()
         fileM = open(fileMname,'a')
