@@ -157,4 +157,5 @@ def DRTMultiAVRgen(M):
     fileM.close()
 
 if __name__ == '__main__':
-    DRTMultiAVRgen()
+    M = int(sys.argv[1])
+    DRTMultiAVRgen(M)
