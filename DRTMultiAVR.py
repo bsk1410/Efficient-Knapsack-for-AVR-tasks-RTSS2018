@@ -49,7 +49,7 @@ def DRTMultiAVRgen(M):
     # print()
     # print(boundarySpeeds)
     # print()
-    # print('Modes = ',M)
+    print('Modes = ',M)
     # end1 = perf_counter()
     # print('Time Taken to compute Random values is ', (end1-start1)*1000)
 
@@ -154,6 +154,7 @@ def DRTMultiAVRgen(M):
     total_time = end - start
 
     fileM.write(str((end-start))+'\n')
+    print('Total time is ',total_time)
     fileM.close()
 
 if __name__ == '__main__':
