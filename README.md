@@ -5,14 +5,16 @@ DRTAlg.py contains the implementation of the DRT paper algorithm.
 The outputs of the algorithms are in the txt files.
 The file diffinFiles.py checks the difference in the outputs of our algorithm and the DRT algorithm.
 
-The runtimes of the algorithms for randomly generated tasksets are in their respective folders.
-
 To run any file: python3 <filename>
 Optional Flags for files NewAlg.py and DRTAlg.py: -t <taskset_number>, -v (for verbose output)
 choose one of [1,2,3] for taskset_number. Default 1.
 1 - denotes the taskset-1 in Bijinemula et al.
 2 - denotes taskset-2 in Bijinemula et al.
 3 - to choose a custom taskset. Also, modify the taskset values in taskset.json file. Make sure to preserve the formatting in the file and that the number of boundary speeds is one more than the number of execution times and the magnitude of maximum acceleration and maximum deceleration should be the same.
+
+## Table of Contents
+
+TODO
 
 ## Features
 
