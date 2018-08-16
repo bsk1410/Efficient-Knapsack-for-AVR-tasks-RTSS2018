@@ -5,7 +5,7 @@ DRTAlg.py contains the implementation of the DRT paper algorithm.
 The outputs of the algorithms are in the txt files.
 The file diffinFiles.py checks the difference in the outputs of our algorithm and the DRT algorithm.
 
-## Quick Run
+## Usage
 To run any file: 
 ```shell
 python3 <filename>
@@ -61,7 +61,7 @@ Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
 
 1. Download and install [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-2. Download the [Knapsack AVR Open Virtual Appliance (OVA)](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+2. Download the Knapsack AVR Open Virtual Appliance (OVA): [Mirror 1](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H), [Mirror 2](https://drive.google.com/drive/folders/1guxYVvrhUcTXSJjurjI1SzDScWlTfgQE?usp=sharing), [Mirror 3](https://drive.google.com/drive/folders/110dwYOQ2a_2hlBj0471JiFwSE_Fzc2Uf?usp=sharing).
 
 3. Import the OVA by opening __VirtualBox__, selecting __File > Import Appliance__, and browsing to the _Knapsack-Based Approach Worst-Case AVR Demand.OVA_ file. Step-by-step import instructions can be found in Oracle's VirtualBox [documentation](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html).
 
@@ -145,6 +145,7 @@ _Note: Completion time for one run will take around of 7 minutes for the Knapsac
 | Arch | 64-bit |
 | CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
 | RAM | __16GB (15.7GB Available)__ |
+
 
 | Guest Property | Description |
 | ------ | ----------- |
