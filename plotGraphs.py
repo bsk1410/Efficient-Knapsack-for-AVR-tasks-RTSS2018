@@ -8,7 +8,7 @@ def multiAVRPlot():
     plt.style.use('seaborn-poster')
 
     #DRT Extraction Initialization
-    baseName = 'DRTAlgMultiAVRTests/DRTAlg_MultiAVR_'
+    baseName = 'DRTMultiAVROutputs/DRTAlg_MultiAVR_'
     DRTRuntimes = []
 
     #Extracting DRT Runtimes
@@ -20,7 +20,7 @@ def multiAVRPlot():
         DRTRuntimes.append(np.mean(currRuntime))
 
     #New Alg Extraction Initialization
-    baseName = 'NewAlgMultipleAVRTests/NewAlg_Multi_'
+    baseName = 'NewMultiAVROutputs/NewAlg_Multi_'
     NewAlgRuntimes = []
 
     #Extracting New Alg Runtimes
