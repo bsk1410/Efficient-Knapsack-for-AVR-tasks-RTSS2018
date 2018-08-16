@@ -5,7 +5,7 @@ import plotGraphs
 import sys
 
 #Input Args
-runsPerMode = in(sys.argv[1])
+runsPerMode = int(sys.argv[1])
 
 #Run NewAlg for Mode count 6 through 15
 for r in range(0,runsPerMode):
