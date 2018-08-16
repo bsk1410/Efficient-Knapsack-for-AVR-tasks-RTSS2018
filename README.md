@@ -81,6 +81,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
     sudo apt-get update &&
     sudo apt-get install git python3 python3-pip python3-tk && pip3 install -U numpy matplotlib
     ```
+    A detailed [step-by-step dependency installation](#step-by-step-installation) is given below.
 
 2. Clone the git repo:
 
@@ -106,6 +107,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | [pip](https://pypi.org/project/pip/) | 9.0.1 |
 | [NumPy](http://www.numpy.org/) | 1.13.3 |
 | [matplotlib](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
+| [tkinter](https://wiki.python.org/moin/TkInter) | 8.6 |
 
 ### Tested System Specifications
 
@@ -116,15 +118,14 @@ choose one of [1,2,3] for taskset_number. Default 1.
 | CPU | Intel Core i7-6700 CPU @ 3.40 GHz x 8 |
 | RAM | 8GB (7.7GB Available) |
 
-### Selecting an Installation Method
+## Install Option 1) Open Virtual Appliance (OVA) with Pre-installed Dependencies
 
-__Option 1) Open Virtual Appliance (OVA) with Pre-Installed Dependencies.__  
-Users may download an OVA with dependencies pre-installed and GitHub code / contents pre-downloaded.
+### Installing and Starting OVA
 
-__Option 2) De Novo Installation.__  
-Users may install dependencies and download GitHub code / contents on their own system.
-
-## Option 1) Open Virtual Appliance (OVA) with Pre-installed Dependencies
+1. Download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).
+2. Download the [Knapsack-Based Approach Worst-Case AVR Demand Open Virtual Appliance (OVA)](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+3. Import the OVA by opening VirtualBox, selecting __File > Import Appliance__, and browsing to the _Knapsack-Based Approach Worst-Case AVR Demand.OVA_ file. Step-by-step import instructions can be found in Oracle's VirtualBox [documentation](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html).
+4. After importing, __Start__ the newly imported _Knapsack-Based Approach Worst-Case AVR Demand_.
 
 ### OVA Specifications
 
@@ -134,7 +135,6 @@ Users may install dependencies and download GitHub code / contents on their own 
 | Arch | 64-bit |
 | CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
 | RAM | __16GB (15.7GB Available)__ |
-
 
 | Guest Property | Description |
 | ------ | ----------- |
@@ -150,16 +150,9 @@ Login:      knapsackavr
 Password:   RTSS2018
 ```
 
-### Installing and Starting OVA
+## Install Option 2) Blank-Slate Linux Installation
 
-1. Download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).
-2. Download the [Knapsack-Based Approach Worst-Case AVR Demand Open Virtual Appliance (OVA)](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
-3. Import the OVA by opening VirtualBox, selecting __File > Import Appliance__, and browsing to the _Knapsack-Based Approach Worst-Case AVR Demand.OVA_ file. Step-by-step import instructions can be found in Oracle's VirtualBox [documentation](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html).
-4. After importing, __Start__ the newly imported _Knapsack-Based Approach Worst-Case AVR Demand_.
-
-## Option 2) Blank-Slate Dependencies
-
-### System Specifications (_as used to generate test RTSS 2018 publication data_)
+### System Specifications (_as used to generate RTSS 2018 publication data_)
 
 | Property | Description |
 | ------ | ----------- |
@@ -172,62 +165,74 @@ Password:   RTSS2018
 
 #### Step-By-Step Installation
 
-Installing [git](https://git-scm.com/) [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
+1. Installing [git](https://git-scm.com/) [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
 
-```sh
-sudo apt-get install git
-```
+    ```sh
+    sudo apt-get install git
+    ```
 
-Installing [Python3](https://www.python.org/) [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
+2. Installing [Python3](https://www.python.org/) [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
 
-```sh
-sudo apt-get update
-sudo apt-get install python3
-```
+    ```sh
+    sudo apt-get update
+    sudo apt-get install python3
+    ```
 
-Installing [pip](https://pypi.org/project/pip/) [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+3. Installing [pip](https://pypi.org/project/pip/) [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
 
-```sh
-sudo apt-get install python-pip python3-pip
-```
+    ```sh
+    sudo apt-get install python-pip python3-pip
+    ```
 
-Installing [Tkinter](https://wiki.python.org/moin/TkInter) [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)]:
+4. Installing [Tkinter](https://wiki.python.org/moin/TkInter) [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)]:
 
-```sh
-sudo apt-get install python3-tk
-```
+    ```sh
+    sudo apt-get install python3-tk
+    ```
 
-Installing [NumPy](http://www.numpy.org/) via pip [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+5. Installing [NumPy](http://www.numpy.org/) via pip [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
 
-```sh
-sudo pip3 install -U numpy
-```
+    ```sh
+    sudo pip3 install -U numpy
+    ```
 
-Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[5](https://matplotlib.org/users/installing.html)]:
+6. Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[5](https://matplotlib.org/users/installing.html)]:
 
-```sh
-sudo pip3 install -U matplotlib
-```
+    ```sh
+    sudo pip3 install -U matplotlib
+    ```
 
-Checking [Python3](https://www.python.org/) Version [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
+#### Step-By-Step Version Checking
 
-```sh
-python3 --version
-```
+1. Checking [Python3](https://www.python.org/) version [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
 
-Checking [NumPy](http://www.numpy.org/) Version in python3 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
+    ```sh
+    python3 --version
+    ```
 
-```python3
->>>import numpy
->>>numpy.version.version
-```
+2. Checking [NumPy](http://www.numpy.org/) version in python3 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)]:
 
-Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in python3 [[8](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+    ```python3
+    >>>import numpy
+    >>>numpy.version.version
+    ```
 
-```python3
->>>import matplotlib
->>>print('matplotlib: {}'.format(matplotlib.__version__))
-```
+3. Checking [tkinter](https://wiki.python.org/moin/TkInter) version in python3 [[8](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)]:
+
+    ```python3
+    >>> import tkinter
+    >>> tkinter.TkVersion
+    ```
+
+4. Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) version in python3 [[9](https://stackoverflow.com/questions/21473600/matplotlib-version)]:
+
+    ```python3
+    >>>import matplotlib
+    >>>print('matplotlib: {}'.format(matplotlib.__version__))
+    ```
+
+#### Step-by-Step References
+
 [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
 [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
 [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
@@ -235,16 +240,8 @@ Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)] [https://askubuntu.com/questions/505081/what-version-of-python-do-i-have](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)  
 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
-[[8](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
-
-#### Single-Script Installation
-
-Combining the above step-by-step installation into a single command gives:
-
-```sh
-sudo apt-get update &&
-sudo apt-get install git python3 python3-pip python3-tk && pip3 install -U numpy matplotlib
-```
+[[8](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)] [https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)  
+[[9](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
 
 ## Running Demand Analysis
 
