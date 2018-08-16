@@ -1,8 +1,8 @@
 #Dependencies
-import NewMultiAVR
-import DRTMultiAVR
-import plotGraphs
-import sys
+import NewMultiAVR  #Knapsack Algorithm
+import DRTMultiAVR  #DRT Algorithm
+import plotGraphs   #Graph plotting script
+import sys          #Handle command-line arguments
 
 #Input Args
 runsPerMode = int(sys.argv[1])
