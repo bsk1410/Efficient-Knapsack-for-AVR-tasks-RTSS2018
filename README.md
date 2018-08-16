@@ -40,7 +40,7 @@ choose one of [1,2,3] for taskset_number. Default 1.
     - [Digraph-Real-Time-Based Demand Analysis](#digraph-real-time-based-demand-analysis)
 * [Publication Information](#publication-information)
   + [Research Publication](#research-publication)
-  + [Authors & Contact](#authors---contact)
+  + [Authors & Contact](#authors--contact)
 
 
 ## Features
