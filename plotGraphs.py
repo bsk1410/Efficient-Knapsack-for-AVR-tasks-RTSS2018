@@ -2,42 +2,47 @@
 import numpy as np                  #http://www.numpy.org/
 import matplotlib.pyplot as plt     #https://matplotlib.org/api/pyplot_api.html
 
-#Initialization
-plt.style.use('seaborn-poster')
+def multiAVRPlot():
 
-#DRT Extraction Initialization
-baseName = 'DRTAlgoMultiAVRTests/DRTAlg_MultiAVR_'
-DRTRuntimes = []
+    #Initialization
+    plt.style.use('seaborn-poster')
 
-#Extracting DRT Runtimes
-for i in range(6,16):
-	with open(baseName+str(i)+'.txt') as f:
-		content = f.readlines()
-	currRuntime = [float(x.strip('\n')) for x in content]
-	
-	DRTRuntimes.append(np.mean(currRuntime))
+    #DRT Extraction Initialization
+    baseName = 'DRTAlgMultiAVRTests/DRTAlg_MultiAVR_'
+    DRTRuntimes = []
 
-#New Alg Extraction Initialization
-baseName = 'NewAlgMultipleAVRTests/NewAlg_Multi_'
-NewAlgRuntimes = []
+    #Extracting DRT Runtimes
+    for i in range(6,16):
+        with open(baseName+str(i)+'.txt') as f:
+            content = f.readlines()
+        currRuntime = [float(x.strip('\n')) for x in content]
+        
+        DRTRuntimes.append(np.mean(currRuntime))
 
-#Extracting New Alg Runtimes
-for i in range(6,16):
-	with open(baseName+str(i)+'.txt') as f:
-		content = f.readlines()
-	currRuntime = [float(x.strip('\n')) for x in content]
-	
-	NewAlgRuntimes.append(np.mean(currRuntime))
+    #New Alg Extraction Initialization
+    baseName = 'NewAlgMultipleAVRTests/NewAlg_Multi_'
+    NewAlgRuntimes = []
 
-#Constuct Plot
-plt.figure()                                                #Figure Init
-plt.plot(range(6,16),DRTRuntimes,label='DRT Alg.')          #DRT Data Plotting
-plt.plot(range(6,16),NewAlgRuntimes,'--',label='Our Alg.')  #New Alg Data Plotting
+    #Extracting New Alg Runtimes
+    for i in range(6,16):
+        with open(baseName+str(i)+'.txt') as f:
+            content = f.readlines()
+        currRuntime = [float(x.strip('\n')) for x in content]
+        
+        NewAlgRuntimes.append(np.mean(currRuntime))
 
-#Label and Legend Generation
-plt.xlabel('Number of Modes')
-plt.ylabel('Runtime (sec)')
-plt.legend()
+    #Constuct Plot
+    plt.figure()                                                #Figure Init
+    plt.plot(range(6,16),DRTRuntimes,label='DRT Alg.')          #DRT Data Plotting
+    plt.plot(range(6,16),NewAlgRuntimes,'--',label='Our Alg.')  #New Alg Data Plotting
 
-#Show plot to user
-plt.show()
+    #Label and Legend Generation
+    plt.xlabel('Number of Modes')
+    plt.ylabel('Runtime (sec)')
+    plt.legend()
+
+    #Show plot to user
+    plt.show()
+
+if __name__ == '__main__':
+    multiAVRPlot()
