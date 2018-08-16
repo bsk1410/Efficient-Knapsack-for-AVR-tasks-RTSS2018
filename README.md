@@ -128,27 +128,20 @@ Users may install dependencies and download GitHub code / contents on their own 
 
 ### OVA Specifications
 
-<table>
-    <tr><th>Host System</th><th>Guest System</th></tr>
-    <tr><td>
-
-| Property | Description |
+| Host Property | Description |
 | ------ | ----------- |
 | OS | Ubuntu 18.04 LTS |
 | Arch | 64-bit |
 | CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
 | RAM | __16GB (15.7GB Available)__ |
 
-</td><td>
 
-| Property | Description |
+| Guest Property | Description |
 | ------ | ----------- |
 | OS | Ubuntu 18.04 LTS |
 | Arch | 64-bit |
 | CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 4__ |
 | RAM | __8GB (7.8GB Available)__ |
-
-</td></tr> </table>
 
 ### Guest Account Information
 
