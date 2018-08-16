@@ -14,7 +14,34 @@ choose one of [1,2,3] for taskset_number. Default 1.
 
 ## Table of Contents
 
-TODO
+* [Features](#features)
+* [Quickstart / Quick Evaluation](#quickstart---quick-evaluation)
+  + [A) Open Virtual Appliance](#a--open-virtual-appliance)
+  + [B) Manual Install (Ubuntu 18.04)](#b--manual-install--ubuntu-1804-)
+* [Getting Started](#getting-started)
+  + [Dependencies](#dependencies)
+  + [Tested System Specifications](#tested-system-specifications)
+  + [Selecting an Installation Method](#selecting-an-installation-method)
+* [Option 1) Open Virtual Appliance (OVA) with Pre-installed Dependencies](#option-1--open-virtual-appliance--ova--with-pre-installed-dependencies)
+  + [OVA Specifications](#ova-specifications)
+  + [Guest Account Information](#guest-account-information)
+  + [Installing and Starting OVA](#installing-and-starting-ova)
+* [Option 2) Blank-Slate Dependencies](#option-2--blank-slate-dependencies)
+  + [System Specifications (_as used to generate test RTSS 2018 publication data_)](#system-specifications---as-used-to-generate-test-rtss-2018-publication-data--)
+  + [Dependency Installation](#dependency-installation)
+    - [Step-By-Step Installation](#step-by-step-installation)
+    - [Single-Script Installation](#single-script-installation)
+* [Running Demand Analysis](#running-demand-analysis)
+  + [Configuration Editing](#configuration-editing)
+    - [Adaptive Variable Rate (AVR) Demand Profiles](#adaptive-variable-rate--avr--demand-profiles)
+    - [Right Boundary Speed Profiles](#right-boundary-speed-profiles)
+  + [Executing Demand Analysis](#executing-demand-analysis)
+    - [Knapsack-Based Demand Analysis](#knapsack-based-demand-analysis)
+    - [Digraph-Real-Time-Based Demand Analysis](#digraph-real-time-based-demand-analysis)
+* [Publication Information](#publication-information)
+  + [Research Publication](#research-publication)
+  + [Authors & Contact](#authors---contact)
+
 
 ## Features
 
@@ -22,7 +49,7 @@ TODO
 - Digraph Real-Time task model demand calculations Python3 implementation as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
 - Graphed comparison of above implementations using matplotlib
 
-## Quickstart
+## Quickstart / Quick Evaluation
 
 ### A) Open Virtual Appliance
 
@@ -38,11 +65,13 @@ TODO
 
 6. __Right click the whitespace__ and select __Open in Terminal__.
 
-7. __Enter__ `sudo ./simpleRunAll`
+7. In the terminal, __enter__:
 
-8. When prompted for a password, the password is: `RTSS2018`.
+    ```sh
+    python3 runAll.py
+    ```
 
-9. Wait Python3 to execute the demand calculations. A graph will be printed with similar results provided in the [publication](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+8. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
 ### B) Manual Install (Ubuntu 18.04)
 
@@ -50,7 +79,7 @@ TODO
 
     ```sh
     sudo apt-get update &&
-    sudo apt-get install git python3 python3-pip && pip3 install -U numpy matplotlib
+    sudo apt-get install git python3 python3-pip python3-tk && pip3 install -U numpy matplotlib
     ```
 
 2. Clone the git repo:
@@ -59,11 +88,13 @@ TODO
     git clone https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018.git
     ```
 
-3. Navigate to the git repo via terminal.
+3. Navigate to the git repo via terminal and run:
 
-4. Run `sudo ./simpleRunAll` and enter the appropriate credentials when prompted.
+    ```sh
+    python3 runAll.py
+    ```
 
-5. Wait Python3 to execute the demand calculations. A graph will be printed with similar results provided in the [publication](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+4. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
 ## Getting Started
 
