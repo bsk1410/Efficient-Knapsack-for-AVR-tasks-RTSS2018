@@ -20,6 +20,49 @@ choose one of [1,2,3] for taskset_number. Default 1.
 - Digraph Real-Time task model demand calculations Python3 implementation as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
 - Graphed comparison of above implementations using matplotlib
 
+## Quickstart
+
+### A) Open Virtual Appliance
+
+1. Download and install [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+2. Download the [Knapsack AVR Open Virtual Appliance (OVA)](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+
+3. Import the OVA by opening __VirtualBox__, selecting __File > Import Appliance__, and browsing to the _Knapsack-Based Approach Worst-Case AVR Demand.OVA_ file. Step-by-step import instructions can be found in Oracle's VirtualBox [documentation](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html).
+
+4. __Start__ the newly imported _Knapsack-Based Approach Worst-Case AVR Demand_ virtual machine.
+
+5. _Open_ the _Efficient-Knapsack-for-AVR-tasks-RTSS2018_ folder on the _Desktop_.
+
+6. __Right click the whitespace__ and select __Open in Terminal__.
+
+7. __Enter__ `sudo ./simpleRunAll`
+
+8. When prompted for a password, the password is: `RTSS2018`.
+
+9. Wait Python3 to execute the demand calculations. A graph will be printed with similar results provided in the [publication](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+
+### B) Manual Install (Ubuntu 18.04)
+
+1. Run the following shell script in linux terminal and enter the appropriate credentials when prompted:
+
+    ```sh
+    sudo apt-get update &&
+    sudo apt-get install git python3 python3-pip && pip3 install -U numpy matplotlib
+    ```
+
+2. Clone the git repo:
+
+    ```sh
+    git clone https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018.git
+    ```
+
+3. Navigate to the git repo via terminal.
+
+4. Run `sudo ./simpleRunAll` and enter the appropriate credentials when prompted.
+
+5. Wait Python3 to execute the demand calculations. A graph will be printed with similar results provided in the [publication](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
+
 ## Getting Started
 
 ### Dependencies
@@ -84,7 +127,7 @@ Password:   RTSS2018
 ### Installing and Starting OVA
 
 1. Download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).
-2. Download [Knapsack-Based Approach Worst-Case AVR Demand.OVA](https://vt.edu/index.html), hosted by Virginia Tech.
+2. Download the [Knapsack-Based Approach Worst-Case AVR Demand Open Virtual Appliance (OVA)](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
 3. Import the OVA by opening VirtualBox, selecting __File > Import Appliance__, and browsing to the _Knapsack-Based Approach Worst-Case AVR Demand.OVA_ file. Step-by-step import instructions can be found in Oracle's VirtualBox [documentation](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html).
 4. After importing, __Start__ the newly imported _Knapsack-Based Approach Worst-Case AVR Demand_.
 
@@ -103,7 +146,13 @@ Password:   RTSS2018
 
 #### Step-By-Step Installation
 
-Installing [Python3](https://www.python.org/) Ubuntu [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
+Installing [git](https://git-scm.com/) [[0](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
+
+```sh
+sudo apt-get install git
+```
+
+Installing [Python3](https://www.python.org/) [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
 
 ```sh
 sudo apt-get update
@@ -147,7 +196,7 @@ Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) Version in
 >>>import matplotlib
 >>>print('matplotlib: {}'.format(matplotlib.__version__))
 ```
-
+[[0](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
 [[1](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
 [[2](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
 [[3](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
@@ -161,7 +210,7 @@ Combining the above step-by-step installation into a single command gives:
 
 ```sh
 sudo apt-get update &&
-sudo apt-get install python3 python3-pip && pip3 install -U numpy matplotlib
+sudo apt-get install git python3 python3-pip && pip3 install -U numpy matplotlib
 ```
 
 ## Running Demand Analysis
