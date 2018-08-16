@@ -1,10 +1,10 @@
-from time import perf_counter
-from math import sqrt
-from bisect import bisect_left #to find the first element greater than a given number in a list
-from collections import defaultdict
-import numpy as np
-import random
-import sys
+from time import perf_counter               #Performance counter - clock with highest available resolution
+from math import sqrt                       #Square root
+from bisect import bisect_left              #Provides would-be index of element to insert
+from collections import defaultdict         #Dictionary that does not throw KeyErrors
+import numpy as np                          #http://www.numpy.org/
+import random                               #RNG
+import sys                                  #Command-line arguments
 
 def DRTMultiAVRgen(M):
 
