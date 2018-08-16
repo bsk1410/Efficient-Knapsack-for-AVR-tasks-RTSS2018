@@ -1,11 +1,10 @@
-from time import perf_counter
-#start = perf_counter()
-from math import sqrt
-from collections import defaultdict
-import numpy as np
-from pprint import pprint
-import random
-from bisect import bisect_left
+from time import perf_counter           #Performance counter - clock with highest available resolution
+from math import sqrt                   #Square root
+from collections import defaultdict     #Dictionary that does not throw KeyErrors
+import numpy as np                      #http://www.numpy.org/
+from pprint import pprint               #Pretty Pring - Output formatting
+import random                           #RNG
+from bisect import bisect_left          #Provides would-be index of element to insert
 
 def NewMultiAVRgen():
 
