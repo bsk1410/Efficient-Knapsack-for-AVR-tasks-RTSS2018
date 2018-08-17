@@ -17,7 +17,7 @@ def NewMultiAVRgen(M):
     a_min = -a_max
 
     # Multiple AVR Tasks generation
-    fileMname = 'DRTMultiAVROutputs/DRTAlg_MultiAVR'+str(M)+'.txt'
+    fileMname = 'NewMultiAVROutputs/NewAlg_Multi_'+str(M)+'.txt'
 
     # start1 = perf_counter()
     random.seed(100)
