@@ -1,54 +1,47 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
-The main code for the algorithm is in the file NewAlg.py.
-DRTAlg.py contains the implementation of the DRT paper algorithm.
-The outputs of the algorithms are in the txt files.
-The file diffinFiles.py checks the difference in the outputs of our algorithm and the DRT algorithm.
-
-## Usage
-To run any file: 
-```shell
-python3 <filename>
-```
-Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
-- Choose one of [1,2,3] for `taskset_number`. Default 1.
-  - 1 - denotes the taskset-1 in Bijinemula et al.
-  - 2 - denotes taskset-2 in Bijinemula et al.
-  - 3 - to choose a custom taskset.
-  
-- Select `-v` for verbose output.
-
 ## Table of Contents
 
-* [Features](#features)
-* [Quickstart / Quick Evaluation](#quickstart--quick-evaluation)
-  + [A) Open Virtual Appliance](#a-open-virtual-appliance)
-  + [B) Manual Install (Ubuntu 18.04)](#b-manual-install-ubuntu-1804)
-* [Getting Started](#getting-started)
-  + [Dependencies](#dependencies)
-  + [Tested System Specifications](#tested-system-specifications)
-  + [Selecting an Installation Method](#selecting-an-installation-method)
-* [Option 1) Open Virtual Appliance (OVA) with Pre-installed Dependencies](#install-option-1-open-virtual-appliance-ova-with-pre-installed-dependencies)
-  + [OVA Specifications](#ova-specifications)
-  + [Guest Account Information](#guest-account-information)
-  + [Installing and Starting OVA](#installing-and-starting-ova)
-* [Option 2) Blank-Slate Dependencies](#install-option-2-blank-slate-linux-installation)
-  + [System Specifications (_as used to generate test RTSS 2018 publication data_)](#system-specifications-as-used-to-generate-rtss-2018-publication-data)
-  + [Dependency Installation](#dependency-installation)
-    - [Step-By-Step Installation](#step-by-step-installation)
-    - [Single-Script Installation](#single-script-installation)
-* [Running Demand Analysis](#running-demand-analysis)
-  + [Configuration Editing](#configuration-editing)
-    - [Adaptive Variable Rate (AVR) Demand Profiles](#adaptive-variable-rate-avr-demand-profiles)
-    - [Right Boundary Speed Profiles](#right-boundary-speed-profiles)
-  + [Executing Demand Analysis](#executing-demand-analysis)
-    - [Knapsack-Based Demand Analysis](#knapsack-based-demand-analysis)
-    - [Digraph-Real-Time-Based Demand Analysis](#digraph-real-time-based-demand-analysis)
-* [Publication Information](#publication-information)
-  * [Research Publication](#research-publication)
-  * [Authors & Contact](#authors---contact)
-* [Appendix](#appendix)
-  * [Appendix A: Version Checking](#appendix-a--version-checking)
+- [Efficient-Knapsack-based-approach-for-AVR-task-Demand](#efficient-knapsack-based-approach-for-avr-task-demand)
+  * [Table of Contents](#table-of-contents)
+  * [Features](#features)
+  * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
+    + [A - Open Virtual Appliance](#a---open-virtual-appliance)
+    + [B - Manual Install - Ubuntu 18.04](#b---manual-install---ubuntu-1804)
+  * [Dependencies](#dependencies)
+  * [Tested System Specifications](#tested-system-specifications)
+    + [Publication Data](#publication-data)
+    + [OVA Specifications](#ova-specifications)
+      - [OVA Account Information](#ova-account-information)
+  * [Detailed Dependency Installation](#detailed-dependency-installation)
+    + [Step-By-Step Installation and Execution](#step-by-step-installation-and-execution)
+  * [How to Use this Artifact - Getting Started - Basic Evaluation](#how-to-use-this-artifact---getting-started---basic-evaluation)
+    + [Evaluation Elements](#evaluation-elements)
+    + [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract)
+    + [Element No.2 - Average Improvement of 77 Times - Abstract](#element-no2---average-improvement-of-77-times---abstract)
+    + [Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I](#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
+    + [Element No.4 - A More General Task Set - Task Set 2 - Table II](#element-no4---a-more-general-task-set---task-set-2---table-ii)
+    + [Element No.5 - Runtime Comparison of Different Algorithms - Table III.a](#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
+    + [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
+    + [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
+    + [Folder Structure Explanation](#folder-structure-explanation)
+  * [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
+    + [Editing Custom Task Sets](#editing-custom-task-sets)
+      - [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
+      - [Configuring Right Boundary Speed Profiles](#configuring-right-boundary-speed-profiles)
+      - [Configuring Acceleration](#configuring-acceleration)
+    + [Running Custom Task Sets](#running-custom-task-sets)
+      - [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
+      - [DRT-Based Demand Calculation](#drt-based-demand-calculation)
+  * [File-by-File Descriptions](#file-by-file-descriptions)
+  * [Publication Information](#publication-information)
+    + [Research Publication](#research-publication)
+    + [Authors & Contact](#authors---contact)
+  * [Appendix](#appendix)
+    + [Appendix A: Version Checking](#appendix-a--version-checking)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Features
 
@@ -56,9 +49,9 @@ Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
 - A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
 - A graphical comparison of the above implementations using matplotlib
 
-## Quickstart / Quick Evaluation
+## Quickstart - Quick Evaluation
 
-### A) Open Virtual Appliance
+### A - Open Virtual Appliance
 
 0. __If not already installed, download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).__.
 
@@ -82,7 +75,7 @@ Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
 
 _Note: Completion time for one run may take at least 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
 
-### B) Manual Install (Ubuntu 18.04)
+### B - Manual Install - Ubuntu 18.04
 
 1. Navigate to the desired cloning directory and execute the following script in the terminal:
 
@@ -214,66 +207,202 @@ Password:   RTSS2018
 [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 
-## Getting Started (Basic Evaluation)
+## How to Use this Artifact - Getting Started - Basic Evaluation
 
-The following section describes how to use this artifact, navigate the provided folder structure, and execute publication task sets
+This artifact serves as a demonstration of repeatability for claims, tables, and figures provided in the RTSS 2018 publication _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted).
 
-### How to Use this Artifact
+### Evaluation Elements
+
+Important claims, figures, and tables in the paper which can be reproduced and validated with this artifact include:
+
+1. The knapsack approach, "is at least 10 times faster" - Abstract
+2. The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract
+3. Task Set Used by Existing Work (Task Set #1) - Table I
+4. A More General Task Set (Task Set #2) - Table II
+5. Runtime Comparison of Different Algorithms - Table III.a
+6. Runtime Comparison of Different Algorithms - Table III.b
+7. Runtime Comparison of Different Algorithms - Table III.c
+
+The remaining sections will guide evaluators through evaluating each claim independent of installation method.
+
+### Element No.1 - At Least 10 Times Faster - Abstract
+
+### Element No.2 - Average Improvement of 77 Times - Abstract
+
+### Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    cat taskSet1.json
+    ```
+
+2. The file displayed is the json encoding of the Table I data, "Task Set Used by Existing Work".
+
+3. To execute this task set for runtime comparison, see Element No.5: Runtime Comparison of Different Algorithms - Table III.a
+
+### Element No.4 - A More General Task Set - Task Set 2 - Table II
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    cat taskSet2.json
+    ```
+
+2. The file displayed is the json encoding of the Table II data, "A more general task set".
+
+3. To execute this task set for runtime comparison, see Element No.6: Runtime Comparison of Different Algorithms - Table III.b
+
+### Element No.5 - Runtime Comparison of Different Algorithms - Table III.a
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 NewAlg.py -t 1
+    ```
+
+    This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal.
+
+2. When the above execution is completed, in the terminal __enter__:
+
+    ```sh
+    python3 DRTAlg.py -t 1
+    ```
+
+    This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal
+
+3. To validate the demand calculations, we can view the last lines of the log files `NewAlgOutput.txt` and `DRTAlgOutput.txt`. In the terminal __enter__:
+
+    ```sh
+    tail -l NewAlgOutput.txt
+    ```
+
+    and
+
+    ```sh
+    tail -l DRTAlgOutput.txt
+    ```
+
+    The calculated maximum demands should be the same.
+
+4. To view the entire log file for each algorithm's execution, in the terminal __enter__:
+
+    ```sh
+    cat NewAlgOutput.txt
+    ```
+
+    and
+
+    ```sh
+    cat DRTAlgOutput.txt
+    ```
+
+### Element No.6 - Runtime Comparison of Different Algorithms - Table III.b
+
+1. Repeat the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` in steps 1. and 2.
+
+2. Repating the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` will execute the Knapsack and DRT-based algorithms on the Table II Task Set - "A more general task set". The time to compute the demand will display in the terminal.
+
+### Element No.7 - Runtime Comparison of Different Algorithms - Table III.c
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 runAll.py
+    ```
+2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
+
+To run the default tests, follow the instructions in the [Quick Start / Quick Evaluation](#quickstart--quick-evaluation) section
 
 ### Folder Structure Explanation
 
 ## Customizing Execution (Extended Evaluation)
 
-### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+### Editing Custom Task Sets
 
-### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+1. To __view__ the current task set, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
-### Executing Standalone Knapsack-Based Demand Analysis
+    ```sh
+    cat taskSetCustom.json
+    ```
+    
+    Example:
 
-### Executing Standalone DRT-Based Demand Analysis
+    ```json
+    {
+	"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500], 
+	"executionTimes": [965, 576, 424, 343, 277, 246], 
+	"a_max": 600000
+    }
+    ```
 
-Independent of which installation method was used to setup dependencies and the software, the following section details how to:
+#### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)
 
-1. Execute multiple Knapsack-DRT comparison runs
-2. Execute single-run Knapsack-based Demand Calculations
-3. Execute single-run DRT-based Demand Calculations
-4. Configure Adaptive-Variable Rate Worst-Case Execution Time Profiles for single-run demand calculations
-5. Configuire Right Boundary Speed profiles for single-run demand calculations 
-6. Execute a Knapsack-Based Demand Analysis
-5. Execute a Digraph-Real-Time-Based Demand Analysis
-6. Compare Knapsack-Based and Digraph-Real-Time-Based analysis to recreate publication data
+An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries.
 
-### Configuration Editing
+1. To __edit__ the execution times, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 3 - Execution Times__. Example:
 
-#### Adaptive Variable Rate Worst Case Execution Time Profiles
+    ```sh
+    "executionTimes": [965, 576, 424, 343, 277, 246]
+    ```
 
-An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries. To change the AVR WCET Profile, edit line 3 of `taskset.json`,
+    ...and replace the default execution times with your own.
 
-```json
-"executionTimes": [965, 576, 424, 343, 277, 246],
-```
+    _Note: Execution times are in microseconds. The number of items in `"executionTimes"` is the __number of modes__. There must be __one less WCET__ than `"boundarySpeeds"` - to edit `"boundarySpeeds"`, see below._
 
-and replace the default execution times with your own.
+#### Configuring Right Boundary Speed Profiles
 
-_Note: Custom execution times will be sorted in descending order. By default, non-decreasing order of execution times are not permitted._
+1. To __edit__ the right boundary speeds, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 2 - Boundary Speeds__. Example:
 
-#### Right Boundary Speed Profiles
+    ```sh
+    "boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
+    ```
 
-A Right Boundary Speed profile specifies the speed ranges across which WCETs are uniform. To change the Right Boundary Speed Profile, edit line 2 of `taskset.json`,
+    ...and replace the default right boundary speeds with your own.
 
-```json
-"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
-```
+    _Note: Right boundary speeds are in revolutions / minute. There must be __one more element in `"boundarySpeeds"` than in `"executionTimes"`__._
 
-and replace the default boundary speeds with your own.
+#### Configuring Acceleration
 
-_Note: Custom right boundary speed profiles __must have one more element__ than the AVR WCET profile._
+1. To __edit__ the acceleration, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 4 - Acceleration__. Example:
 
-### Executing Demand Analysis
+    ```sh
+    "a_max": 600000
+    ```
 
-#### Knapsack-Based Demand Analysis
+    ...and replace the default acceleration with your own.
 
-#### Digraph-Real-Time-Based Demand Analysis
+    _Note: Acceleration is in revolutions / minute^2. Minimum acceleration `a_min` is not listed as `a_max` must be equal in magnitude (but opposite in direction) to `a_max`_.
+
+### Running Custom Task Sets
+
+#### Knapsack-Based Demand Calculation
+
+1. To execute the Knapsack-Based Demand Calculation on the custom task set, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 NewAlg.py -t 3
+    ```
+
+  The `-t 3` parameter specifies execution with the taskset parameters in `taskSetCustom.json`.
+
+2. Upon completion, the running time will be printed in the terminal.
+3. To view the calculated demand, in the terminal, __enter__:
+
+    ```sh
+    tail -l NewAlgOutput.txt
+    ```
+4. To view the entire demand calculation log, in the terminal, __enter__:
+
+    ```sh
+    cat NewAlgOutput.txt
+    ```
+
+#### DRT-Based Demand Calculation
+
+- To execute the Knapsack-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
+
+## File-by-File Descriptions
 
 ## Publication Information
 
