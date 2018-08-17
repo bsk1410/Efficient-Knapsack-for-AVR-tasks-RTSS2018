@@ -8,7 +8,7 @@ def multiAVRPlot():
     plt.style.use('seaborn-poster')
 
     #DRT Extraction Initialization
-    baseName = 'pubData/DRTAlgMultiAVRPubTests/DRTAlg_MultiAVR_'
+    baseName = 'DRTMultiAVROutputs/DRTAlg_MultiAVR_'
     DRTRuntimes = []
 
     #Extracting DRT Runtimes
@@ -20,7 +20,7 @@ def multiAVRPlot():
         DRTRuntimes.append(np.mean(currRuntime))
 
     #New Alg Extraction Initialization
-    baseName = 'pubData/NewAlgMultipleAVRPubTests/NewAlg_Multi_'
+    baseName = 'NewMultiAVROutputs/NewAlg_Multi_'
     NewAlgRuntimes = []
 
     #Extracting New Alg Runtimes
@@ -35,15 +35,18 @@ def multiAVRPlot():
     plt.figure()                                                #Figure Init
     plt.plot(range(6,16),DRTRuntimes,label='DRT Alg.')          #DRT Data Plotting
     plt.plot(range(6,16),NewAlgRuntimes,'--',label='Our Alg.')  #New Alg Data Plotting
-    plt.xticks(range(6,16))	#Display all the points on the x-axis
 
-    #Label and Legend Generation
+    #Title, Label and Legend Generation
+    plt.title('Runtime vs Number of Modes')
     plt.xlabel('Number of Modes')
     plt.ylabel('Runtime (sec)')
+    plt.xticks(range(6,16))                   #Display all the points on the x-axis
     plt.legend()
 
     #Show plot to user
     plt.show()
+    #Uncomment the bottom line to save the plot
+    #plt.savefig('runtimePlot.png',bbox_inches='tight')
 
 if __name__ == '__main__':
     multiAVRPlot()
