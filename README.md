@@ -216,7 +216,6 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
 ├── pubData                         Raw Publication Data 
 │   ├── DRTAlgMultiAVRPubTests          DRT-Based Demand Calculation Run Data
 │   └── NewAlgMultipleAVRPubTests       Knapsack-Based Demand Calculation Run Data
-├── requirements.txt                
 ├── runAll.py                       Script for autorunning and graphing algorithm runtimes
 ├── taskSet1.json                   Publication Task Set 1
 ├── taskSet2.json                   Publication Task Set 2
