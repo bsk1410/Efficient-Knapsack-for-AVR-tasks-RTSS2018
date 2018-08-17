@@ -16,9 +16,9 @@
   * [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
   * [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
   * [Folder and File Structure Explanation](#folder-and-file-structure-explanation)
-* [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
+* [Customizing Execution - Extended Evaluation](#customizing-execution---extended-evaluation)
   * [Editing Custom Task Sets](#editing-custom-task-sets)
-    * [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
+    * [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles and Number of Modes](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles-and-number-of-modes)
     * [Configuring Right Boundary Speed Profiles](#configuring-right-boundary-speed-profiles)
     * [Configuring Acceleration](#configuring-acceleration)
   * [Running Custom Task Sets](#running-custom-task-sets)
@@ -40,7 +40,7 @@
   * [[taskSetCustom.json](#taskSetCustom.json)](#-tasksetcustomjson--tasksetcustomjson-)
 * [Publication Information](#publication-information)
   * [RTSS 2018 Publication](#rtss-2018-publication)
-  * [Authors & Contact](#authors---contact)
+  * [Authors - Contact](#authors---contact)
 * [Appendix](#appendix)
 * [Appendix A - Dependencies](#appendix-a---dependencies)
 * [Appendix B - Tested System Specifications](#appendix-b---tested-system-specifications)
@@ -48,7 +48,7 @@
   * [OVA Host and Guest Systems](#ova-host-and-guest-systems)
 * [Appendix C - OVA Account Information](#appendix-c---ova-account-information)
 * [Appendix D - Step-By-Step Installation and Execution](#appendix-d---step-by-step-installation-and-execution)
-* [Appendix E: Version Checking](#appendix-e--version-checking)
+* [Appendix E - Version Checking](#appendix-e---version-checking)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -236,7 +236,7 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
 └── taskSetCustom.json              Custom, User-Defined Task Set
 ```
 
-## Customizing Execution (Extended Evaluation)
+## Customizing Execution - Extended Evaluation
 
 ### Editing Custom Task Sets
 
@@ -256,7 +256,7 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
     }
     ```
 
-#### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)
+#### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles and Number of Modes
 
 An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries.
 
@@ -571,7 +571,7 @@ _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of A
 Real-Time Systems Symposium ([RTSS](http://2018.rtss.org/)) 2018 - Main Real-Time Track  
 Nashville, Tennessee, USA
 
-### Authors & Contact
+### Authors - Contact
 
 | Author | Department | University | Location | Email |
 | ------ | ---------- | ---------- | -------- | ----- |
@@ -699,7 +699,7 @@ Password:   RTSS2018
 [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 
-## Appendix E: Version Checking
+## Appendix E - Version Checking
 
 Checking [Python3](https://www.python.org/) version [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
 
