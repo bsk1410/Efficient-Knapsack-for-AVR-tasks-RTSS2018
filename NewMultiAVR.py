@@ -11,51 +11,65 @@ def NewMultiAVRgen(M):
     #Units
     #a_max, a_min : revolutions / min^2
     #speed, peak_speed, speed_new : revolutions / minute (RPM)
-
     #Acceleration equal in magnitude to deceleration per Bijinemula et al. Sec. III.A Para. 4 
     a_max = 600000
     a_min = -a_max
 
-    # Multiple AVR Tasks generation
-    fileMname = 'NewMultiAVROutputs/NewAlg_Multi_'+str(M)+'.txt'
+    if M>0:
+        
+        # Multiple AVR Tasks generation
+        fileMname = 'NewMultiAVROutputs/NewAlg_Multi_'+str(M)+'.txt'
 
-    # start1 = perf_counter()
-    random.seed(100)
-    Ustar = 0.25
-    Udict = dict()
-    for i in range(M):
-        Udict[i] = random.uniform(0.85*Ustar, Ustar)
-    Udict[M-1] = Ustar
-
-    while True:
-        while True:
-            rightBoundarySpeeds = sorted(random.sample(range(500,6500),M-1))
-            rightBoundarySpeeds = [500]+rightBoundarySpeeds+[6500]
-            for i in range(M):
-                k = i
-                if rightBoundarySpeeds[i+1] - rightBoundarySpeeds[i] < 3000/M:
-                    continue
-                    
-            if k==M-1:
-                break
-        br = 0
-        executionTimes = []
+        # start1 = perf_counter()
+        random.seed(100)
+        Ustar = 0.25
+        Udict = dict()
         for i in range(M):
-            executionTimes.append(1000**2*Udict[i]*60/rightBoundarySpeeds[i])   #in micro seconds
-        for c1,c2 in zip(executionTimes[:-1],executionTimes[1:]):
-            if c1<c2:
-                br=1
+            Udict[i] = random.uniform(0.85*Ustar, Ustar)
+        Udict[M-1] = Ustar
+
+        while True:
+            while True:
+                rightBoundarySpeeds = sorted(random.sample(range(500,6500),M-1))
+                rightBoundarySpeeds = [500]+rightBoundarySpeeds+[6500]
+                for i in range(M):
+                    k = i
+                    if rightBoundarySpeeds[i+1] - rightBoundarySpeeds[i] < 3000/M:
+                        continue
+                        
+                if k==M-1:
+                    break
+            br = 0
+            executionTimes = []
+            for i in range(M):
+                executionTimes.append(1000**2*Udict[i]*60/rightBoundarySpeeds[i])   #in micro seconds
+            for c1,c2 in zip(executionTimes[:-1],executionTimes[1:]):
+                if c1<c2:
+                    br=1
+                    break
+            if br==0:
                 break
-        if br==0:
-            break
-    #print(executionTimes)
-    #print()
-    #print(rightBoundarySpeeds)
-    #print()
-    print('Modes = ',M)
-    end1 = perf_counter()
-    #print('Time Taken to compute Random values is ', (end1-start1)*1000)    
-    #continue
+        #print(executionTimes)
+        #print()
+        #print(rightBoundarySpeeds)
+        #print()
+        print('Modes = ',M)
+        #end1 = perf_counter()
+        #print('Time Taken to compute Random values is ', (end1-start1)*1000)    
+        #continue
+    
+    else:
+        #if M<0, run the algorithm on a predefined taskset
+        import json
+        taskSetFileName = 'taskSet'+str(abs(M))+'.json'
+        fileMname = 'NewMultiAVROutputs/NewAlg_'+str(abs(M))+'.txt'
+        
+        with open(taskSetFileName) as f:
+            taskset = json.load(f)
+
+        rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])[1:]
+        executionTimes = sorted(taskset['executionTimes'])
+
     #Start timer
     start = perf_counter()
 
@@ -286,7 +300,7 @@ def NewMultiAVRgen(M):
     fileM = open(fileMname,'a')
     total_time = end - start
     fileM.write(str((end-start))+'\n')
-    print('Total time is ',total_time)
+    #print('Total time is ',total_time)
     fileM.close()
 
 if __name__ == '__main__':

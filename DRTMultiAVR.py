@@ -11,51 +11,64 @@ def DRTMultiAVRgen(M):
     #Units
     #a_max, a_min : revolutions / min^2
     #speed, peak_speed, speed_new : revolutions / minute (RPM)
-
     #Acceleration equal in magnitude to deceleration per Bijinemula et al. Sec. III.A Para. 4 
     a_max = 600000
     a_min = -a_max
 
-    # Multiple AVR Tasks generation
-    fileMname = 'DRTMultiAVROutputs/DRTAlg_MultiAVR_'+str(M)+'.txt'
+    if M>0:
 
-    # start1 = perf_counter()
-    random.seed(100)
-    Ustar = 0.25
-    Udict = dict()
-    for i in range(M):
-        Udict[i] = random.uniform(0.85*Ustar, Ustar)
-    Udict[M-1] = Ustar
+        # Multiple AVR Tasks generation
+        fileMname = 'DRTMultiAVROutputs/DRTAlg_MultiAVR_'+str(M)+'.txt'
 
-    while True:
-        while True:
-            boundarySpeeds = sorted(random.sample(range(500,6500),M-1))
-            boundarySpeeds = [500]+boundarySpeeds+[6500]
-            for i in range(M):
-                k = i
-                if boundarySpeeds[i+1] - boundarySpeeds[i] < 3000/M:
-                    continue
-                    
-            if k==M-1:
-                break
-        br = 0
-        executionTimes = []
+        # start1 = perf_counter()
+        random.seed(100)
+        Ustar = 0.25
+        Udict = dict()
         for i in range(M):
-            executionTimes.append(1000**2*Udict[i]*60/boundarySpeeds[i])   #in micro seconds
-        for c1,c2 in zip(executionTimes[:-1],executionTimes[1:]):
-            if c1<c2:
-                br=1
-                break
-        if br==0:
-            break
+            Udict[i] = random.uniform(0.85*Ustar, Ustar)
+        Udict[M-1] = Ustar
 
-    # print(executionTimes)
-    # print()
-    # print(boundarySpeeds)
-    # print()
-    print('Modes = ',M)
-    # end1 = perf_counter()
-    # print('Time Taken to compute Random values is ', (end1-start1)*1000)
+        while True:
+            while True:
+                boundarySpeeds = sorted(random.sample(range(500,6500),M-1))
+                boundarySpeeds = [500]+boundarySpeeds+[6500]
+                for i in range(M):
+                    k = i
+                    if boundarySpeeds[i+1] - boundarySpeeds[i] < 3000/M:
+                        continue
+                        
+                if k==M-1:
+                    break
+            br = 0
+            executionTimes = []
+            for i in range(M):
+                executionTimes.append(1000**2*Udict[i]*60/boundarySpeeds[i])   #in micro seconds
+            for c1,c2 in zip(executionTimes[:-1],executionTimes[1:]):
+                if c1<c2:
+                    br=1
+                    break
+            if br==0:
+                break
+
+        # print(executionTimes)
+        # print()
+        # print(boundarySpeeds)
+        # print()
+        print('Modes = ',M)
+        # end1 = perf_counter()
+        # print('Time Taken to compute Random values is ', (end1-start1)*1000)
+
+    else:
+        #if M<0, run the algorithm on a predefined taskset
+        import json
+        taskSetFileName = 'taskSet'+str(abs(M))+'.json'
+        fileMname = 'DRTMultiAVROutputs/DRTAlg_'+str(abs(M))+'.txt'
+        
+        with open(taskSetFileName) as f:
+            taskset = json.load(f)
+
+        boundarySpeeds = sorted(taskset['boundarySpeeds'])
+        executionTimes = sorted(taskset['executionTimes'])
 
     #Start timer
     start = perf_counter()
@@ -202,7 +215,7 @@ def DRTMultiAVRgen(M):
     fileM = open(fileMname,'a')
     total_time = end - start
     fileM.write(str((end-start))+'\n')
-    print('Total time is ',total_time)
+    #print('Total time is ',total_time)
     fileM.close()
 
 if __name__ == '__main__':
