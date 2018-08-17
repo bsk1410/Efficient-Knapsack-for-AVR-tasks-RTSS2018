@@ -325,56 +325,91 @@ To run the default tests, follow the instructions in the [Quick Start / Quick Ev
 
 ## Customizing Execution (Extended Evaluation)
 
-### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+### Editing Custom Task Sets
 
-### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+1. To __view__ the current task set, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
-### Executing Standalone Knapsack-Based Demand Analysis
+    ```sh
+    cat taskSetCustom.json
+    ```
+    
+    Example:
 
-### Executing Standalone DRT-Based Demand Analysis
+    ```json
+    {
+	"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500], 
+	"executionTimes": [965, 576, 424, 343, 277, 246], 
+	"a_max": 600000
+    }
+    ```
 
-Independent of which installation method was used to setup dependencies and the software, the following section details how to:
+#### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)
 
-1. Execute multiple Knapsack-DRT comparison runs
-2. Execute single-run Knapsack-based Demand Calculations
-3. Execute single-run DRT-based Demand Calculations
-4. Configure Adaptive-Variable Rate Worst-Case Execution Time Profiles for single-run demand calculations
-5. Configuire Right Boundary Speed profiles for single-run demand calculations 
-6. Execute a Knapsack-Based Demand Analysis
-5. Execute a Digraph-Real-Time-Based Demand Analysis
-6. Compare Knapsack-Based and Digraph-Real-Time-Based analysis to recreate publication data
+An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries.
 
-### Configuration Editing
+1. To __edit__ the execution times, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 3 - Execution Times__. Example:
 
-#### Adaptive Variable Rate Worst Case Execution Time Profiles
+    ```sh
+    "executionTimes": [965, 576, 424, 343, 277, 246]
+    ```
 
-An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries. To change the AVR WCET Profile, edit line 3 of `taskset.json`,
+    ...and replace the default execution times with your own.
 
-```json
-"executionTimes": [965, 576, 424, 343, 277, 246],
-```
+    _Note: Execution times are in microseconds. The number of items in `"executionTimes"` is the __number of modes__. There must be __one less WCET__ than `"boundarySpeeds"` - to edit `"boundarySpeeds"`, see below._
 
-and replace the default execution times with your own.
+#### Configuring Right Boundary Speed Profiles
 
-_Note: Custom execution times will be sorted in descending order. By default, non-decreasing order of execution times are not permitted._
+1. To __edit__ the right boundary speeds, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 2 - Boundary Speeds__. Example:
 
-#### Right Boundary Speed Profiles
+    ```sh
+    "boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
+    ```
 
-A Right Boundary Speed profile specifies the speed ranges across which WCETs are uniform. To change the Right Boundary Speed Profile, edit line 2 of `taskset.json`,
+    ...and replace the default right boundary speeds with your own.
 
-```json
-"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
-```
+    _Note: Right boundary speeds are in revolutions / minute. There must be __one more element in `"boundarySpeeds"` than in `"executionTimes"`__._
 
-and replace the default boundary speeds with your own.
+#### Configuring Acceleration
 
-_Note: Custom right boundary speed profiles __must have one more element__ than the AVR WCET profile._
+1. To __edit__ the acceleration, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 4 - Acceleration__. Example:
 
-### Executing Demand Analysis
+    ```sh
+    "a_max": 600000
+    ```
 
-#### Knapsack-Based Demand Analysis
+    ...and replace the default acceleration with your own.
 
-#### Digraph-Real-Time-Based Demand Analysis
+    _Note: Acceleration is in revolutions / minute^2. Minimum acceleration `a_min` is not listed as `a_max` must be equal in magnitude (but opposite in direction) to `a_max`_.
+
+### Running Custom Task Sets
+
+#### Knapsack-Based Demand Calculation
+
+1. To execute the Knapsack-Based Demand Calculation on the custom task set, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 NewAlg.py -t 3
+    ```
+
+  The `-t 3` parameter specifies execution with the taskset parameters in `taskSetCustom.json`.
+
+2. Upon completion, the running time will be printed in the terminal.
+3. To view the calculated demand, in the terminal, __enter__:
+
+    ```sh
+    tail -l NewAlgOutput.txt
+    ```
+4. To view the entire demand calculation log, in the terminal, __enter__:
+
+    ```sh
+    cat NewAlgOutput.txt
+    ```
+
+#### DRT-Based Demand Calculation
+
+- To execute the Knapsack-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
+
+## File-by-File Descriptions
 
 ## Publication Information
 
