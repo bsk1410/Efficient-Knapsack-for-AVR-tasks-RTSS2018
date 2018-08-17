@@ -124,7 +124,7 @@ The OVA for use by the RTSS 2018 Artifact Evaluation Committee and the public wa
 | CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
 | RAM | __16GB (15.7GB Available)__ |
 
-</br>
+<br>
 
 | Guest Property | Description |
 | ------ | ----------- |
