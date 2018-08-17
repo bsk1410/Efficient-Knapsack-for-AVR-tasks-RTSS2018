@@ -63,10 +63,18 @@ def multiAVRPlot():
         improvementRatios.append(DRTAlgRuntimes[i]/NewAlgRuntimes[i])
     
     #Display Improvement Ratios
-    print("Improvement Ratios (DRT Time / Knapsack Time):")
-    print(improvementRatios)
-    print("Minimum Improvement", min(improvementRatios))
-    print("Average Improvement", sum(improvementRatios)/len(improvementRatios))
+    print("\n--Randomized Improvement Ratios (DRT Time / Knapsack Time)--")
+    for i in range(0,10):
+        print("Number of Modes: ",i+6," Improvement: ",improvementRatios[i])
+    
+    print("\n--Task Set 1 & 2 Improvement Ratios (DRT Time / Knapsack Time)--")
+    for i in range(0,2):
+        print("Task Set: ",i+1," Improvement: ",improvementRatios[i+10])
+
+    print("\n--Summary Stats--")
+    print("Minimum Improvement: ", min(improvementRatios))
+    print("Maximum Improvement: ", max(improvementRatios))
+    print("Average Improvement: ", sum(improvementRatios)/len(improvementRatios))
 
     #Constuct Plot
     plt.figure()                                                #Figure Init
