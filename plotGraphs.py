@@ -31,6 +31,17 @@ def multiAVRPlot():
         
         NewAlgRuntimes.append(np.mean(currRuntime))
 
+    #Improvement Calculation and Display
+    improvementRatios = []
+
+    for i in range(0,10):
+        improvementRatios.append(DRTRuntimes[i]/NewAlgRuntimes[i])
+
+    print("Improvement Ratios (DRT Time / Knapsack Time):")
+    print(improvementRatios)
+    print("Minimum Improvement", min(improvementRatios))
+    print("Average Improvement", sum(improvementRatios)/len(improvementRatios))
+
     #Constuct Plot
     plt.figure()                                                #Figure Init
     plt.plot(range(6,16),DRTRuntimes,label='DRT Alg.')          #DRT Data Plotting
