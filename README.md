@@ -20,15 +20,12 @@ choose one of [1,2,3] for taskset_number. Default 1.
   * [B) Manual Install (Ubuntu 18.04)](#b--manual-install--ubuntu-1804-)
 * [Dependencies](#dependencies)
 * [Tested System Specifications](#tested-system-specifications)
-  * [Original Publication Data](#original-publication-data)
+  * [Publication Data](#publication-data)
   * [OVA Specifications](#ova-specifications)
-* [Step-by-Step](#step-by-step)
-  * [Guest Account Information](#guest-account-information)
-  * [Dependency Installation](#dependency-installation)
-    * [Step-By-Step Installation and Execution](#step-by-step-installation-and-execution)
-    * [Step-by-Step References](#step-by-step-references)
-* [Guest Account Information](#guest-account-information-1)
-* [Running Demand Analysis](#running-demand-analysis)
+    * [OVA Account Information](#ova-account-information)
+* [Detailed Dependency Installation](#detailed-dependency-installation)
+  * [Step-By-Step Installation and Execution](#step-by-step-installation-and-execution)
+* [Getting Started](#getting-started)
   * [Configuration Editing](#configuration-editing)
     * [Adaptive Variable Rate (AVR) Demand Profiles](#adaptive-variable-rate--avr--demand-profiles)
     * [Right Boundary Speed Profiles](#right-boundary-speed-profiles)
@@ -205,22 +202,40 @@ Password:   RTSS2018
 [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 
-## Getting Started
+## Getting Started (Basic Evaluation)
+
+The following section describes how to use this artifact, navigate the provided folder structure, and execute publication task sets
+
+### How to Use this Artifact
+
+### Folder Structure Explanation
+
+## Customizing Execution (Extended Evaluation)
+
+### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+
+### Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles
+
+### Executing Standalone Knapsack-Based Demand Analysis
+
+### Executing Standalone DRT-Based Demand Analysis
 
 Independent of which installation method was used to setup dependencies and the software, the following section details how to:
 
-1. Execute multi-run Knapsack-based and DRT-based demand calculation comparisons 
-2. Configure Adaptive-Variable Rate Worst-Case Execution Times
-3. Configuire Right Boundary Speed profiles
-4. Execute a Knapsack-Based Demand Analysis
+1. Execute multiple Knapsack-DRT comparison runs
+2. Execute single-run Knapsack-based Demand Calculations
+3. Execute single-run DRT-based Demand Calculations
+4. Configure Adaptive-Variable Rate Worst-Case Execution Time Profiles for single-run demand calculations
+5. Configuire Right Boundary Speed profiles for single-run demand calculations 
+6. Execute a Knapsack-Based Demand Analysis
 5. Execute a Digraph-Real-Time-Based Demand Analysis
 6. Compare Knapsack-Based and Digraph-Real-Time-Based analysis to recreate publication data
 
 ### Configuration Editing
 
-#### Adaptive Variable Rate (AVR) Demand Profiles
+#### Adaptive Variable Rate Worst Case Execution Time Profiles
 
-An Adaptive Variable Rate (AVR) Demand Profile specifies Worst-Case Execution Times (WCETs) for the speed ranges between right boundaries. To change the AVR Demand Profile, edit line 3 of `taskset.json`,
+An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specifies WCETs for the speed ranges between right boundaries. To change the AVR WCET Profile, edit line 3 of `taskset.json`,
 
 ```json
 "executionTimes": [965, 576, 424, 343, 277, 246],
@@ -232,7 +247,7 @@ _Note: Custom execution times will be sorted in descending order. By default, no
 
 #### Right Boundary Speed Profiles
 
-A Right Boundary Speed profile specifies the speed ranges across which Worst-Case Execution Times (WCETs) are uniform. To change the Right Boundary Speed Profile, edit line 2 of `taskset.json`,
+A Right Boundary Speed profile specifies the speed ranges across which WCETs are uniform. To change the Right Boundary Speed Profile, edit line 2 of `taskset.json`,
 
 ```json
 "boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
@@ -240,7 +255,7 @@ A Right Boundary Speed profile specifies the speed ranges across which Worst-Cas
 
 and replace the default boundary speeds with your own.
 
-_Note: Custom right boundary speed profiles __must have one more element__ than the AVR Demand profile._
+_Note: Custom right boundary speed profiles __must have one more element__ than the AVR WCET profile._
 
 ### Executing Demand Analysis
 
@@ -261,7 +276,7 @@ Nashville, Tennessee, USA
 | Author | Department | University | Location | Email |
 | ------ | ---------- | ---------- | -------- | ----- |
 | Sandeep Kumar Bijinemula | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, USA | bsk1410@vt.edu |
-| Aaron Willcock | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, USA | aaron.willcock@wayne.edu |
+| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, USA | aaron.willcock@wayne.edu |
 | [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, USA | tchantem@vt.edu |
 | [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, USA | fishern@wayne.edu |
 
