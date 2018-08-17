@@ -5,6 +5,7 @@ import numpy as np                      #http://www.numpy.org/
 from pprint import pprint               #Pretty Pring - Output formatting
 import random                           #RNG
 from bisect import bisect_left          #Provides would-be index of element to insert
+import sys                              #Command-line arguments
 
 def NewMultiAVRgen(M):
 
