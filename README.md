@@ -1,54 +1,47 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
-The main code for the algorithm is in the file NewAlg.py.
-DRTAlg.py contains the implementation of the DRT paper algorithm.
-The outputs of the algorithms are in the txt files.
-The file diffinFiles.py checks the difference in the outputs of our algorithm and the DRT algorithm.
-
-## Usage
-To run any file: 
-```shell
-python3 <filename>
-```
-Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
-- Choose one of [1,2,3] for `taskset_number`. Default 1.
-  - 1 - denotes the taskset-1 in Bijinemula et al.
-  - 2 - denotes taskset-2 in Bijinemula et al.
-  - 3 - to choose a custom taskset.
-  
-- Select `-v` for verbose output.
-
 ## Table of Contents
 
-* [Features](#features)
-* [Quickstart / Quick Evaluation](#quickstart--quick-evaluation)
-  + [A) Open Virtual Appliance](#a-open-virtual-appliance)
-  + [B) Manual Install (Ubuntu 18.04)](#b-manual-install-ubuntu-1804)
-* [Getting Started](#getting-started)
-  + [Dependencies](#dependencies)
-  + [Tested System Specifications](#tested-system-specifications)
-  + [Selecting an Installation Method](#selecting-an-installation-method)
-* [Option 1) Open Virtual Appliance (OVA) with Pre-installed Dependencies](#install-option-1-open-virtual-appliance-ova-with-pre-installed-dependencies)
-  + [OVA Specifications](#ova-specifications)
-  + [Guest Account Information](#guest-account-information)
-  + [Installing and Starting OVA](#installing-and-starting-ova)
-* [Option 2) Blank-Slate Dependencies](#install-option-2-blank-slate-linux-installation)
-  + [System Specifications (_as used to generate test RTSS 2018 publication data_)](#system-specifications-as-used-to-generate-rtss-2018-publication-data)
-  + [Dependency Installation](#dependency-installation)
-    - [Step-By-Step Installation](#step-by-step-installation)
-    - [Single-Script Installation](#single-script-installation)
-* [Running Demand Analysis](#running-demand-analysis)
-  + [Configuration Editing](#configuration-editing)
-    - [Adaptive Variable Rate (AVR) Demand Profiles](#adaptive-variable-rate-avr-demand-profiles)
-    - [Right Boundary Speed Profiles](#right-boundary-speed-profiles)
-  + [Executing Demand Analysis](#executing-demand-analysis)
-    - [Knapsack-Based Demand Analysis](#knapsack-based-demand-analysis)
-    - [Digraph-Real-Time-Based Demand Analysis](#digraph-real-time-based-demand-analysis)
-* [Publication Information](#publication-information)
-  * [Research Publication](#research-publication)
-  * [Authors & Contact](#authors---contact)
-* [Appendix](#appendix)
-  * [Appendix A: Version Checking](#appendix-a--version-checking)
+- [Efficient-Knapsack-based-approach-for-AVR-task-Demand](#efficient-knapsack-based-approach-for-avr-task-demand)
+  * [Table of Contents](#table-of-contents)
+  * [Features](#features)
+  * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
+    + [A - Open Virtual Appliance](#a---open-virtual-appliance)
+    + [B - Manual Install - Ubuntu 18.04](#b---manual-install---ubuntu-1804)
+  * [Dependencies](#dependencies)
+  * [Tested System Specifications](#tested-system-specifications)
+    + [Publication Data](#publication-data)
+    + [OVA Specifications](#ova-specifications)
+      - [OVA Account Information](#ova-account-information)
+  * [Detailed Dependency Installation](#detailed-dependency-installation)
+    + [Step-By-Step Installation and Execution](#step-by-step-installation-and-execution)
+  * [How to Use this Artifact - Getting Started - Basic Evaluation](#how-to-use-this-artifact---getting-started---basic-evaluation)
+    + [Evaluation Elements](#evaluation-elements)
+    + [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract)
+    + [Element No.2 - Average Improvement of 77 Times - Abstract](#element-no2---average-improvement-of-77-times---abstract)
+    + [Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I](#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
+    + [Element No.4 - A More General Task Set - Task Set 2 - Table II](#element-no4---a-more-general-task-set---task-set-2---table-ii)
+    + [Element No.5 - Runtime Comparison of Different Algorithms - Table III.a](#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
+    + [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
+    + [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
+    + [Folder Structure Explanation](#folder-structure-explanation)
+  * [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
+    + [Editing Custom Task Sets](#editing-custom-task-sets)
+      - [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
+      - [Configuring Right Boundary Speed Profiles](#configuring-right-boundary-speed-profiles)
+      - [Configuring Acceleration](#configuring-acceleration)
+    + [Running Custom Task Sets](#running-custom-task-sets)
+      - [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
+      - [DRT-Based Demand Calculation](#drt-based-demand-calculation)
+  * [File-by-File Descriptions](#file-by-file-descriptions)
+  * [Publication Information](#publication-information)
+    + [Research Publication](#research-publication)
+    + [Authors & Contact](#authors---contact)
+  * [Appendix](#appendix)
+    + [Appendix A: Version Checking](#appendix-a--version-checking)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Features
 
@@ -56,9 +49,9 @@ Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
 - A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
 - A graphical comparison of the above implementations using matplotlib
 
-## Quickstart / Quick Evaluation
+## Quickstart - Quick Evaluation
 
-### A) Open Virtual Appliance
+### A - Open Virtual Appliance
 
 0. __If not already installed, download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).__.
 
@@ -82,7 +75,7 @@ Optional flags for files NewAlg.py and DRTAlg.py: `-t <taskset_number>, -v`
 
 _Note: Completion time for one run may take at least 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
 
-### B) Manual Install (Ubuntu 18.04)
+### B - Manual Install - Ubuntu 18.04
 
 1. Navigate to the desired cloning directory and execute the following script in the terminal:
 
@@ -214,11 +207,11 @@ Password:   RTSS2018
 [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 
-## How to Use this Artifact: Getting Started / Basic Evaluation
+## How to Use this Artifact - Getting Started - Basic Evaluation
 
 This artifact serves as a demonstration of repeatability for claims, tables, and figures provided in the RTSS 2018 publication _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted).
 
-### Evaluation Elements: Claims, Figures, and Tables
+### Evaluation Elements
 
 Important claims, figures, and tables in the paper which can be reproduced and validated with this artifact include:
 
@@ -232,11 +225,11 @@ Important claims, figures, and tables in the paper which can be reproduced and v
 
 The remaining sections will guide evaluators through evaluating each claim independent of installation method.
 
-### Element #1: The knapsack approach, "is at least 10 times faster" - Abstract
+### Element No.1 - At Least 10 Times Faster - Abstract
 
-### Element #2: The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract
+### Element No.2 - Average Improvement of 77 Times - Abstract
 
-### Element #3: Task Set Used by Existing Work (Task Set #1) - Table I
+### Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I
 
 1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
@@ -246,9 +239,9 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 2. The file displayed is the json encoding of the Table I data, "Task Set Used by Existing Work".
 
-3. To execute this task set for runtime comparison, see Element #5: Runtime Comparison of Different Algorithms - Table III.a
+3. To execute this task set for runtime comparison, see Element No.5: Runtime Comparison of Different Algorithms - Table III.a
 
-### Element #4: A More General Task Set (Task Set #2) - Table II
+### Element No.4 - A More General Task Set - Task Set 2 - Table II
 
 1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
@@ -258,9 +251,9 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 2. The file displayed is the json encoding of the Table II data, "A more general task set".
 
-3. To execute this task set for runtime comparison, see Element #6: Runtime Comparison of Different Algorithms - Table III.b
+3. To execute this task set for runtime comparison, see Element No.6: Runtime Comparison of Different Algorithms - Table III.b
 
-### Element #5: Runtime Comparison of Different Algorithms - Table III.a
+### Element No.5 - Runtime Comparison of Different Algorithms - Table III.a
 
 1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
@@ -304,13 +297,13 @@ The remaining sections will guide evaluators through evaluating each claim indep
     cat DRTAlgOutput.txt
     ```
 
-### Element #6: Runtime Comparison of Different Algorithms - Table III.b
+### Element No.6 - Runtime Comparison of Different Algorithms - Table III.b
 
 1. Repeat the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` in steps 1. and 2.
 
 2. Repating the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` will execute the Knapsack and DRT-based algorithms on the Table II Task Set - "A more general task set". The time to compute the demand will display in the terminal.
 
-### Element #7: Runtime Comparison of Different Algorithms - Table III.c
+### Element No.7 - Runtime Comparison of Different Algorithms - Table III.c
 
 1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
