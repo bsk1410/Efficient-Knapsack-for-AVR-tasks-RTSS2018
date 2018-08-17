@@ -218,7 +218,7 @@ Password:   RTSS2018
 
 This artifact serves as a demonstration of repeatability for claims, tables, and figures provided in the RTSS 2018 publication _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted).
 
-### Claims
+### Evaluation Elements: Claims, Figures, and Tables
 
 Important claims, figures, and tables in the paper which can be reproduced and validated with this artifact include:
 
@@ -232,9 +232,85 @@ Important claims, figures, and tables in the paper which can be reproduced and v
 
 The remaining sections will guide evaluators through evaluating each claim independent of installation method.
 
-### Claim #6: Runtime Comparison of Different Algorithms - Table III.b
+### Element #1: The knapsack approach, "is at least 10 times faster" - Abstract
 
-### Claim #7: Runtime Comparison of Different Algorithms - Table III.c
+### Element #2: The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract
+
+### Element #3: Task Set Used by Existing Work (Task Set #1) - Table I
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    cat taskSet1.json
+    ```
+
+2. The file displayed is the json encoding of the Table I data, "Task Set Used by Existing Work".
+
+3. To execute this task set for runtime comparison, see Element #5: Runtime Comparison of Different Algorithms - Table III.a
+
+### Element #4: A More General Task Set (Task Set #2) - Table II
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    cat taskSet2.json
+    ```
+
+2. The file displayed is the json encoding of the Table II data, "A more general task set".
+
+3. To execute this task set for runtime comparison, see Element #6: Runtime Comparison of Different Algorithms - Table III.b
+
+### Element #5: Runtime Comparison of Different Algorithms - Table III.a
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 NewAlg.py -t 1
+    ```
+
+    This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal.
+
+2. When the above execution is completed, in the terminal __enter__:
+
+    ```sh
+    python3 DRTAlg.py -t 1
+    ```
+
+    This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal
+
+3. To validate the demand calculations, we can view the last lines of the log files `NewAlgOutput.txt` and `DRTAlgOutput.txt`. In the terminal __enter__:
+
+    ```sh
+    tail -l NewAlgOutput.txt
+    ```
+
+    and
+
+    ```sh
+    tail -l DRTAlgOutput.txt
+    ```
+
+    The calculated maximum demands should be the same.
+
+4. To view the entire log file for each algorithm's execution, in the terminal __enter__:
+
+    ```sh
+    cat NewAlgOutput.txt
+    ```
+
+    and
+
+    ```sh
+    cat DRTAlgOutput.txt
+    ```
+
+### Element #6: Runtime Comparison of Different Algorithms - Table III.b
+
+1. Repeat the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` in steps 1. and 2.
+
+2. Repating the steps for Claim #5 replacing the parameter `-t 1` with `-t 2` will execute the Knapsack and DRT-based algorithms on the Table II Task Set - "A more general task set". The time to compute the demand will display in the terminal.
+
+### Element #7: Runtime Comparison of Different Algorithms - Table III.c
 
 1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
