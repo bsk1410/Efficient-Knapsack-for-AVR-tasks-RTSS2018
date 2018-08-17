@@ -31,12 +31,14 @@ def multiAVRPlot():
         
         NewAlgRuntimes.append(np.mean(currRuntime))
 
-    #Improvement Calculation and Display
+    #Initialize Improvement Ratios
     improvementRatios = []
 
+    #Calculate Improvement Ratios
     for i in range(0,10):
         improvementRatios.append(DRTRuntimes[i]/NewAlgRuntimes[i])
-
+    
+    #Display Improvement Ratios
     print("Improvement Ratios (DRT Time / Knapsack Time):")
     print(improvementRatios)
     print("Minimum Improvement", min(improvementRatios))
