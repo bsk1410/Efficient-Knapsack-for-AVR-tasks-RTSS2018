@@ -8,11 +8,15 @@ import sys                                  #Command-line arguments
 
 def DRTMultiAVRgen(M):
 
-    # Multiple AVR Tasks generation
-    # inputs that need to given - Umax, M_min, M_max, Umax
-    #M = int(sys.argv[1])
+    #Units
+    #a_max, a_min : revolutions / min^2
+    #speed, peak_speed, speed_new : revolutions / minute (RPM)
+
+    #Acceleration equal in magnitude to deceleration per Bijinemula et al. Sec. III.A Para. 4 
     a_max = 600000
-    a_min = -600000
+    a_min = -a_max
+
+    # Multiple AVR Tasks generation
     fileMname = 'DRTMultiAVROutputs/DRTAlg_MultiAVR'+str(M)+'.txt'
 
     # start1 = perf_counter()
