@@ -214,11 +214,36 @@ Password:   RTSS2018
 [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
 [[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
 
-## Getting Started (Basic Evaluation)
+## How to Use this Artifact: Getting Started / Basic Evaluation
 
-The following section describes how to use this artifact, navigate the provided folder structure, and execute publication task sets
+This artifact serves as a demonstration of repeatability for claims, tables, and figures provided in the RTSS 2018 publication _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted).
 
-### How to Use this Artifact
+### Claims
+
+Important claims, figures, and tables in the paper which can be reproduced and validated with this artifact include:
+
+1. The knapsack approach, "is at least 10 times faster" - Abstract
+2. The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract
+3. Task Set Used by Existing Work (Task Set #1) - Table I
+4. A More General Task Set (Task Set #2) - Table II
+5. Runtime Comparison of Different Algorithms - Table III.a
+6. Runtime Comparison of Different Algorithms - Table III.b
+7. Runtime Comparison of Different Algorithms - Table III.c
+
+The remaining sections will guide evaluators through evaluating each claim independent of installation method.
+
+### Claim #6: Runtime Comparison of Different Algorithms - Table III.b
+
+### Claim #7: Runtime Comparison of Different Algorithms - Table III.c
+
+1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+
+    ```sh
+    python3 runAll.py
+    ```
+2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
+
+To run the default tests, follow the instructions in the [Quick Start / Quick Evaluation](#quickstart--quick-evaluation) section
 
 ### Folder Structure Explanation
 
