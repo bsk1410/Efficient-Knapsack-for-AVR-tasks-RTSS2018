@@ -25,19 +25,19 @@
     * [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
     * [DRT-Based Demand Calculation](#drt-based-demand-calculation)
 * [File-by-File Description and Operation](#file-by-file-description-and-operation)
-  * [[diffInFiles.py](#diffInFiles.py)](#-diffinfilespy--diffinfilespy-)
-  * [[DRTAlgOutput.txt](#DRTAlgOutput.txt)](#-drtalgoutputtxt--drtalgoutputtxt-)
-  * [[DRTAlg.py](#DRTAlg.py)](#-drtalgpy--drtalgpy-)
-  * [[DRTMultiAVR.py](#DRTMultiAVR.py)](#-drtmultiavrpy--drtmultiavrpy-)
-  * [[README.md](#README.md)](#-readmemd--readmemd-)
-  * [[NewAlgOutput.txt](#NewAlgOutput.txt)](#-newalgoutputtxt--newalgoutputtxt-)
-  * [[NewAlg.py](#NewAlg.py)](#-newalgpy--newalgpy-)
-  * [[NewMultiAVR.py](#NewMultiAVR.py)](#-newmultiavrpy--newmultiavrpy-)
-  * [[plotGraphs.py](#plotGraphs.py)](#-plotgraphspy--plotgraphspy-)
-  * [[runAll.py](#runAll.py)](#-runallpy--runallpy-)
-  * [[taskSet1.json](#taskSet1.json)](#-taskset1json--taskset1json-)
-  * [[taskSet2.json](#taskSet2.json)](#-taskset2json--taskset2json-)
-  * [[taskSetCustom.json](#taskSetCustom.json)](#-tasksetcustomjson--tasksetcustomjson-)
+  * [diffInFiles.py](#diffinfilespy)
+  * [DRTAlgOutput.txt](#drtalgoutputtxt)
+  * [DRTAlg.py](#drtalgpy)
+  * [DRTMultiAVR.py](#drtmultiavrpy)
+  * [README.md](#readmemd)
+  * [NewAlgOutput.txt](#newalgoutputtxt)
+  * [NewAlg.py](#newalgpy)
+  * [NewMultiAVR.py](#newmultiavrpy)
+  * [plotGraphs.py](#plotgraphspy)
+  * [runAll.py](#runallpy)
+  * [taskSet1.json](#taskset1json)
+  * [taskSet2.json](#taskset2json)
+  * [taskSetCustom.json](#tasksetcustomjson)
 * [Publication Information](#publication-information)
   * [RTSS 2018 Publication](#rtss-2018-publication)
   * [Authors - Contact](#authors---contact)
@@ -324,7 +324,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 ## File-by-File Description and Operation
 
-### [diffInFiles.py](diffInFiles.py)
+### diffInFiles.py
 
 * Description:
 
@@ -342,13 +342,13 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
     Terminal output of differences in log files and number of differences.
 
-### [DRTAlgOutput.txt](DRTAlgOutput.txt)
+### DRTAlgOutput.txt
 
 * Description:
 
     Output log for DRTAlg.py containing calculated demand and demand update timestamps.
 
-### [DRTAlg.py](DRTAlg.py)
+### DRTAlg.py
 
 * Description:
 
@@ -376,7 +376,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     The calculated demand and demand update timestamps are logged in __`DRTAlgOutput.txt`.
     Runtime is printed to the terminal.
 
-### [DRTMultiAVR.py](DRTMultiAVR.py)
+### DRTMultiAVR.py
 
 * Description:
 
@@ -402,19 +402,19 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
     The runtime is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
 
-### [README.md](README.md)
+### README.md
 
 * Description:
 
     README for Efficient-Knapsack-For-AVR-Tasks-RTSS2018 artifact.
 
-### [NewAlgOutput.txt](NewAlgOutput.txt)
+### NewAlgOutput.txt
 
 * Description:
 
     Output log for NewAlg.py containing calculated demand and demand update timestamps.
 
-### [NewAlg.py](NewAlg.py)
+### NewAlg.py
 
 * Description:
 
@@ -442,7 +442,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     The calculated demand and demand update timestamps are logged in __`NewAlgOutput.txt`.
     Runtime is printed to the terminal.
 
-### [NewMultiAVR.py](NewMultiAVR.py)
+### NewMultiAVR.py
 
 * Description:
 
@@ -468,7 +468,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
     The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
 
-### [plotGraphs.py](plotGraphs.py)
+### plotGraphs.py
 
 * Description:
 
@@ -487,7 +487,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     Improvement calculations are printed to terminal.
     A graph of runtime vs number of modes is generated based on data in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
 
-### [runAll.py](runAll.py)
+### runAll.py
 
 * Description:
 
@@ -521,7 +521,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
   * Improvement calculations are printed to terminal.
   * A graph of runtime vs number of modes is generated based on data in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
 
-### [taskSet1.json](taskSet1.json)
+### taskSet1.json
 
 * Description:
 
@@ -535,7 +535,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     }
     ```
 
-### [taskSet2.json](taskSet2.json)
+### taskSet2.json
 
 * Description:
 
@@ -549,7 +549,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     }
     ```
 
-### [taskSetCustom.json](taskSetCustom.json)
+### taskSetCustom.json
 
 * Description:
 
