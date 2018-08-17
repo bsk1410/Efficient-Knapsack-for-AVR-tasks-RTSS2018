@@ -198,6 +198,30 @@ To run the default tests, follow the instructions in the [Quick Start / Quick Ev
 
 ### Folder Structure Explanation
 
+```
+Efficient-Knapsack-For-AVR-Tasks-RTSS2018
+├── diffInFiles.py                  Script for step-by-step DRT/Knapsack Comparison 
+├── DRTAlgOutput.txt                Output of DRTAlg.py
+├── DRTAlg.py                       DRT-Based Demand Calculation
+├── DRTMultiAVROutputs              Directory for DRTMultiAVR.py outputs
+│   └── DRTAlg_MultiAVR_XX.txt          Example DRTMultiAVR.py output with XX modes
+├── DRTMultiAVR.py                  Multi-Run DRT-Based Demand Calculation
+├── README.md                       README
+├── NewAlgOutput.txt                Output of NewAlg.py
+├── NewAlg.py                       Knapsack-Based Demand Calculation
+├── NewMultiAVROutputs              Directory for NewMultiAVR.py outputs
+│   └── NewAlg_Multi_XX.txt             Example DRTMultiAVR.py output with XX modes
+├── NewMultiAVR.py                  Multi-Run Knapsack-Based Demand Calculation
+├── plotGraphs.py                   DRT and Knapsack Runtime vs Mode Comparison Graph Plotter
+├── pubData                         Raw Publication Data 
+│   ├── DRTAlgMultiAVRPubTests          DRT-Based Demand Calculation Run Data
+│   └── NewAlgMultipleAVRPubTests       Knapsack-Based Demand Calculation Run Data
+├── requirements.txt                
+├── runAll.py                       Script for autorunning and graphing algorithm runtimes
+├── taskSet1.json                   Publication Task Set 1
+├── taskSet2.json                   Publication Task Set 2
+└── taskSetCustom.json              Custom, User-Defined Task Set
+```
 ## Customizing Execution (Extended Evaluation)
 
 ### Editing Custom Task Sets
