@@ -15,7 +15,7 @@
   * [Element No.5 - Runtime Comparison of Different Algorithms - Table III.a](#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
   * [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
   * [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
-  * [Folder Structure Explanation](#folder-structure-explanation)
+  * [Folder and File Structure Explanation](#folder-and-file-structure-explanation)
 * [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
   * [Editing Custom Task Sets](#editing-custom-task-sets)
     * [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
@@ -24,9 +24,22 @@
   * [Running Custom Task Sets](#running-custom-task-sets)
     * [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
     * [DRT-Based Demand Calculation](#drt-based-demand-calculation)
-* [File-by-File Descriptions](#file-by-file-descriptions)
+* [File-by-File Description and Operation](#file-by-file-description-and-operation)
+  * [[diffInFiles.py](#diffInFiles.py)](#-diffinfilespy--diffinfilespy-)
+  * [[DRTAlgOutput.txt](#DRTAlgOutput.txt)](#-drtalgoutputtxt--drtalgoutputtxt-)
+  * [[DRTAlg.py](#DRTAlg.py)](#-drtalgpy--drtalgpy-)
+  * [[DRTMultiAVR.py](#DRTMultiAVR.py)](#-drtmultiavrpy--drtmultiavrpy-)
+  * [[README.md](#README.md)](#-readmemd--readmemd-)
+  * [[NewAlgOutput.txt](#NewAlgOutput.txt)](#-newalgoutputtxt--newalgoutputtxt-)
+  * [[NewAlg.py](#NewAlg.py)](#-newalgpy--newalgpy-)
+  * [[NewMultiAVR.py](#NewMultiAVR.py)](#-newmultiavrpy--newmultiavrpy-)
+  * [[plotGraphs.py](#plotGraphs.py)](#-plotgraphspy--plotgraphspy-)
+  * [[runAll.py](#runAll.py)](#-runallpy--runallpy-)
+  * [[taskSet1.json](#taskSet1.json)](#-taskset1json--taskset1json-)
+  * [[taskSet2.json](#taskSet2.json)](#-taskset2json--taskset2json-)
+  * [[taskSetCustom.json](#taskSetCustom.json)](#-tasksetcustomjson--tasksetcustomjson-)
 * [Publication Information](#publication-information)
-  * [Research Publication](#research-publication)
+  * [RTSS 2018 Publication](#rtss-2018-publication)
   * [Authors & Contact](#authors---contact)
 * [Appendix](#appendix)
 * [Appendix A - Dependencies](#appendix-a---dependencies)
@@ -42,19 +55,20 @@
 
 ## Features
 
-- A Python3 implementation of the Knapsack-based demand calculations as found in Bijinemula et al.
-- A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
-- A graphical comparison of the above implementations using matplotlib
+* A Python3 implementation of the Knapsack-based demand calculations as found in Bijinemula et al.
+* A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+* A graphical comparison of the above implementations using matplotlib
 
 ## Quickstart - Quick Evaluation
 
 Evaluators are encouraged to:
+
 1. Select a Quickstart Option (A or B)
 2. Navigate to the  [How to Use This Artifact](#how-to-use-this-artifact---getting-started---basic-evaluation) for instructions on evaluating all elements
 
 ### Option A - Open Virtual Appliance
 
-0. __If not already installed, download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).__.
+1. __If not already installed, download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).__.
 
 2. Download the Knapsack AVR Open Virtual Appliance (OVA): [Mirror 1](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H), [Mirror 2](https://drive.google.com/drive/folders/1guxYVvrhUcTXSJjurjI1SzDScWlTfgQE?usp=sharing), [Mirror 3](https://drive.google.com/drive/folders/110dwYOQ2a_2hlBj0471JiFwSE_Fzc2Uf?usp=sharing).
 
@@ -196,11 +210,11 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 To run the default tests, follow the instructions in the [Quick Start / Quick Evaluation](#quickstart--quick-evaluation) section
 
-### Folder Structure Explanation
+### Folder and File Structure Explanation
 
-```
+```txt
 Efficient-Knapsack-For-AVR-Tasks-RTSS2018
-├── diffInFiles.py                  Script for step-by-step DRT/Knapsack Comparison 
+├── diffInFiles.py                  Script for step-by-step DRT/Knapsack Comparison  
 ├── DRTAlgOutput.txt                Output of DRTAlg.py
 ├── DRTAlg.py                       DRT-Based Demand Calculation
 ├── DRTMultiAVROutputs              Directory for DRTMultiAVR.py outputs
@@ -213,7 +227,7 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
 │   └── NewAlg_Multi_XX.txt             Example DRTMultiAVR.py output with XX modes
 ├── NewMultiAVR.py                  Multi-Run Knapsack-Based Demand Calculation
 ├── plotGraphs.py                   DRT and Knapsack Runtime vs Mode Comparison Graph Plotter
-├── pubData                         Raw Publication Data 
+├── pubData                         Raw Publication Data  
 │   ├── DRTAlgMultiAVRPubTests          DRT-Based Demand Calculation Run Data
 │   └── NewAlgMultipleAVRPubTests       Knapsack-Based Demand Calculation Run Data
 ├── runAll.py                       Script for autorunning and graphing algorithm runtimes
@@ -221,6 +235,7 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
 ├── taskSet2.json                   Publication Task Set 2
 └── taskSetCustom.json              Custom, User-Defined Task Set
 ```
+
 ## Customizing Execution (Extended Evaluation)
 
 ### Editing Custom Task Sets
@@ -230,14 +245,14 @@ Efficient-Knapsack-For-AVR-Tasks-RTSS2018
     ```sh
     cat taskSetCustom.json
     ```
-    
+
     Example:
 
     ```json
     {
-	"boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500], 
-	"executionTimes": [965, 576, 424, 343, 277, 246], 
-	"a_max": 600000
+    "boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],  
+    "executionTimes": [965, 576, 424, 343, 277, 246],  
+    "a_max": 600000
     }
     ```
 
@@ -289,7 +304,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     python3 NewAlg.py -t 3
     ```
 
-  The `-t 3` parameter specifies execution with the taskset parameters in `taskSetCustom.json`.
+    The `-t 3` parameter specifies execution with the taskset parameters in `taskSetCustom.json`.
 
 2. Upon completion, the running time will be printed in the terminal.
 3. To view the calculated demand, in the terminal, __enter__:
@@ -305,13 +320,252 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 #### DRT-Based Demand Calculation
 
-- To execute the Knapsack-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
+* To execute the Knapsack-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
 
-## File-by-File Descriptions
+## File-by-File Description and Operation
+
+### [diffInFiles.py](diffInFiles.py)
+
+* Description:
+
+    Python3 script for auto-comparing DRTAlgOutput.txt and NewAlgOutput.txt log files.
+
+* Inputs: None
+
+* Example:
+
+    ```sh
+    python3 diffInFiles.py
+    ```
+
+* Output:
+
+    Terminal output of differences in log files and number of differences.
+
+### [DRTAlgOutput.txt](DRTAlgOutput.txt)
+
+* Description:
+
+    Output log for DRTAlg.py containing calculated demand and demand update timestamps.
+
+### [DRTAlg.py](DRTAlg.py)
+
+* Description:
+
+    Python3 script for executing __DRT-based demand calculations__ on one of three task sets.
+
+* Inputs:
+  * __-h__ : Help flag for showing detailed help
+  * __-t #__ : Task Set Indicator identifying the task set number to use where:
+    * 1 - Use Task Set #1 in Bijinemula et al.
+    * 2 - Use Task Set #2 in Bijinemula et al.
+    * 3 - Use the custom, user-defined task set defined in `taskSetCustom.json`
+
+  * __-v__ : Verbose output flag for generating detailed output logs
+
+* Example:
+
+    The following example completes one run of the __DRT-Based Demand Calculation__ using the __Task Set #2__ in Bijinemula et al.:
+
+    ```sh
+    python3 DRTAlg.py -t 2
+    ```
+
+* Output:
+
+    The calculated demand and demand update timestamps are logged in __`DRTAlgOutput.txt`.
+    Runtime is printed to the terminal.
+
+### [DRTMultiAVR.py](DRTMultiAVR.py)
+
+* Description:
+
+    Python3 script for generating randomized AVR task sets split into _M_ modes and calculating demand using __DRT-based calculations__.
+
+    ```sh
+    python3 DRTMultiAVR.py M
+    ```
+
+* Inputs:
+
+  * __M__ : A positive integer indicating the number of modes to split the randomized AVR task set into.
+
+* Example:
+
+    The following example completes one run of the __DRT-Based Demand Calculation__ on a randomized AVR task set split into __6__ modes:
+
+    ```sh
+    python3 DRTMultiAVR.py 6
+    ```
+
+* Output:
+
+    The runtime is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+
+### [README.md](README.md)
+
+* Description:
+
+    README for Efficient-Knapsack-For-AVR-Tasks-RTSS2018 artifact.
+
+### [NewAlgOutput.txt](NewAlgOutput.txt)
+
+* Description:
+
+    Output log for NewAlg.py containing calculated demand and demand update timestamps.
+
+### [NewAlg.py](NewAlg.py)
+
+* Description:
+
+    Python3 script for executing __Knapsack-based demand calculations__ on one of three task sets.
+
+* Inputs:
+  * __-h__ : Help flag for showing detailed help
+  * __-t #__ : Task Set Indicator identifying the task set number to use where:
+    * 1 - Use Task Set #1 in Bijinemula et al.
+    * 2 - Use Task Set #2 in Bijinemula et al.
+    * 3 - Use the custom, user-defined task set defined in `taskSetCustom.json`
+
+    * __-v__ : Verbose output flag for generating detailed output logs
+
+* Example:
+
+    The following example completes one run of the __Knapsack-Based Demand Calculation__ using the __Custom, User-Defined Task Set__ in `taskSetCustom.json`:
+
+    ```sh
+    python3 DRTAlg.py -t 3
+    ```
+
+* Output:
+
+    The calculated demand and demand update timestamps are logged in __`NewAlgOutput.txt`.
+    Runtime is printed to the terminal.
+
+### [NewMultiAVR.py](NewMultiAVR.py)
+
+* Description:
+
+    Python3 script for generating randomized AVR task sets split into _M_ modes and calculating demand using __Knapsack-based__ calculations.
+
+    ```sh
+    python3 NewMultiAVR.py M
+    ```
+
+* Inputs:
+
+  * __M__ : A positive integer indicating the number of modes to split the randomized AVR task set into.
+
+* Example:
+
+    The following example completes one run of the __Knapsack-Based Demand Calculation__ on a randomized AVR task set split into __6__ modes:
+
+    ```sh
+    python3 NewMultiAVR.py 6
+    ```
+
+* Output:
+
+    The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+
+### [plotGraphs.py](plotGraphs.py)
+
+* Description:
+
+    Python3 script for printing speed improvement calculations and graphing DRT and Knapsack-based demand calculation runtimes in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
+
+* Inputs: None
+
+* Example:
+
+    ```sh
+    python3 plotGraphs.py
+    ```
+
+* Output:
+
+    Improvement calculations are printed to terminal.
+    A graph of runtime vs number of modes is generated based on data in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
+
+### [runAll.py](runAll.py)
+
+* Description:
+
+    Python3 script for executing multiple runs of DRT and Knapsack-based demand calculations over a varying number of modes, generating improvement calculations, and graphing runtime vs number of modes to compare both algorithms.  
+
+* Inputs:
+
+  * __-h__ : Help flag for showing detailed help
+  * __-r N__ : Run Count Indicator identifying the number of runs per mode to execute where __N__ is a positive integer.  _Default:_ 1 run.
+  * __-m N__ : Minimum Number of Modes Indicator identifying the starting number of modes to divide generated task sets into where __N__ is a positive integer. _Default:_ 6 mode split.
+  * __-M N__ : Maximum Number of Modes Indicator identifying the number of modes to divide generated task sets into where __N__ is a positive integer __greater than the Minimum Number of Modes__. _Default:_ 15 mode split.
+
+* Example:
+
+    The following example completes 10 runs of the __DRT-Based Demand Calculation__ and __Knapsack-Based Demand Calculation__ on a randomized AVR task set split into __6__ to __15__ modes:
+
+    ```sh
+    python3 runAll.py -r 10 -m 6 -M 15
+    ```
+
+    _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits.
+
+    __Warning:__ Executing the [runAll.py](#runAll.py) script with large run counts, mode counts, or a combination thereof can greatly increase runtime.
+
+    Example: Completion time for __one run__ (the default) may take at least __7 minutes__ for the Knapsack-Based algorithm and __15.8 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__.
+
+* Output:
+
+  * The runtime of DRT-based calculations is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+  * The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+  * Improvement calculations are printed to terminal.
+  * A graph of runtime vs number of modes is generated based on data in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
+
+### [taskSet1.json](taskSet1.json)
+
+* Description:
+
+    JSON file specifying Task Set 1 per Bijinemula et al.
+
+    ```json
+    {
+        "boundarySpeeds": [500, 1500, 2500, 3500, 4500, 5500, 6500],
+        "executionTimes": [965, 576, 424, 343, 277, 246],
+        "a_max": 600000
+    }
+    ```
+
+### [taskSet2.json](taskSet2.json)
+
+* Description:
+
+    JSON file specifying Task Set 2 per Bijinemula et al.
+
+    ```json
+    {
+        "boundarySpeeds": [1200, 2200, 3200, 4200, 5200, 6200, 7200],
+        "executionTimes": [965, 576, 424, 343, 277, 246],
+        "a_max": 600000
+    }
+    ```
+
+### [taskSetCustom.json](taskSetCustom.json)
+
+* Description:
+
+    JSON file specifying the custom, user-defined task set.
+
+    ```json
+    {
+        "boundarySpeeds": [1000, 2000, 3000, 4000, 5000, 6000, 7000],
+        "executionTimes": [950, 550, 450, 350, 250, 150],
+        "a_max": 500000
+    }
+    ```
 
 ## Publication Information
 
-### Research Publication
+### RTSS 2018 Publication
 
 _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted)  
 Real-Time Systems Symposium ([RTSS](http://2018.rtss.org/)) 2018 - Main Real-Time Track  
@@ -340,7 +594,7 @@ Nashville, Tennessee, USA
 
 ## Appendix B - Tested System Specifications
 
-The following section describes system specifications for all systems (virtual and real) used in the creation of this artifact, publication data, and virtual appliance. 
+The following section describes system specifications for all systems (virtual and real) used in the creation of this artifact, publication data, and virtual appliance.  
 
 ### Original System - Publication Data
 
