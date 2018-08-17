@@ -64,6 +64,7 @@ print('boundarySpeeds: ',boundarySpeeds, 'revolutions / minute')
 print('executionTimes: ',executionTimes, 'us')
 print('a_max:          ',a_max, ' revolutions / min^2')
 print('a_min:          ',a_min, 'revolutions / min^2')
+print('Executing...')
 
 #Start timer
 start = perf_counter()

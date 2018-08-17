@@ -26,29 +26,45 @@ parser.add_argument('-t','--taskset',choices=['1','2','3'],metavar='#',default='
 parser.add_argument('-v','--verbose',action='store_true',help='Get detailed output')
 args = parser.parse_args()
 
-if args.taskset == '1':     #Use boundary speeds of Taskset 1 in Bijinemula et al. Table I
-    boundarySpeeds = range(500,7500,1000)
-elif args.taskset == '2':   #Use boundary speeds of Taskset 2 in Bijinemula et al. Table II
-    boundarySpeeds = range(1200,8200,1000)
+#If task set 1 is selected...
+if args.taskset == '1':
+    #Use boundary speeds, execution times, acceleration of Taskset 1 in Bijinemula et al. Table I
+    taskSetFileName = 'taskSet1.json'
+#If task set 2 is selected...
+elif args.taskset == '2':
+    #Use boundary speeds, execution times, acceleration of Taskset 2 in Bijinemula et al. Table II
+    taskSetFileName = 'taskSet2.json'
+#...otherwise, default to custom task set
 else:
-    #Open Custom Task Set
-    with open('taskset.json') as f:
-        taskset = json.load(f)
+    #Use boundary speeds, execution times, acceleration of the user's custom task set in 'taskSetCustom.json'
+    taskSetFileName = 'taskSetCustom.json'
 
-    #Sort Right Boundary Speeds in increasing order
-    boundarySpeeds = sorted(taskset['boundarySpeeds'])
+#Open Task Set File
+with open(taskSetFileName) as f:
+    taskset = json.load(f)
 
-    #Sort execution times in decreasing order
-    executionTimes = sorted(taskset['executionTimes'], reverse=True)
-    
-    #Set accelerations equal in magnitude
-    a_max = taskset['a_max']
-    a_min = -a_max
+#Sort Right Boundary Speeds in increasing order
+boundarySpeeds = sorted(taskset['boundarySpeeds'])
 
-    #Validate # Right Boundary Speeds is one more than # Execution Times 
-    if len(boundarySpeeds) != len(executionTimes)+1:
-        print('Error: The number of boundary speeds should be one more than the number of execution times.')
-        sys.exit(0)
+#Sort execution times in decreasing order
+executionTimes = sorted(taskset['executionTimes'], reverse=True)
+
+#Set accelerations equal in magnitude
+a_max = taskset['a_max']
+a_min = -a_max
+
+#Validate # Right Boundary Speeds is one more than # Execution Times 
+if len(boundarySpeeds) != len(executionTimes)+1:
+    print('Error: The number of boundary speeds should be one more than the number of execution times.')
+    sys.exit(0)
+
+#Print Parameters:
+print('Task File:      ',taskSetFileName)
+print('boundarySpeeds: ',boundarySpeeds, 'revolutions / minute')
+print('executionTimes: ',executionTimes, 'us')
+print('a_max:          ',a_max, ' revolutions / min^2')
+print('a_min:          ',a_min, 'revolutions / min^2')
+print('Executing...')
 
 #Start timer
 start = perf_counter()
