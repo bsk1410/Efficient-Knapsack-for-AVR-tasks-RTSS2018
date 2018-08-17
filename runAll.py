@@ -40,14 +40,14 @@ print("Executing ",runsPerMode," run(s) per Mode Count")
 #Run NewAlg for Mode count 6 through 15
 print("---Knapsack-Based Algorithm---")
 for r in range(0,runsPerMode):
-    print("\tExecuting Run ",r," of ", runsPerMode," for Mode Counts ",minNumMode,"-",maxNumMode)
+    print("\tExecuting Run ",r+1," of ", runsPerMode," for Mode Counts ",minNumMode,"-",maxNumMode)
     for m in range(minNumMode,maxNumMode+1):
         NewMultiAVR.NewMultiAVRgen(m)
 
 #Run DRT Alg for Mode count 6 through 15
 print("---DRT Algorithm---")
 for r in range(0,runsPerMode):
-    print("\tExecuting Run ",r," of ", runsPerMode," for Mode Counts ",minNumMode,"-",maxNumMode)
+    print("\tExecuting Run ",r+1," of ", runsPerMode," for Mode Counts ",minNumMode,"-",maxNumMode)
     for m in range(minNumMode,maxNumMode+1):
         DRTMultiAVR.DRTMultiAVRgen(m)
 
