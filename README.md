@@ -2,43 +2,40 @@
 
 ## Table of Contents
 
-- [Efficient-Knapsack-based-approach-for-AVR-task-Demand](#efficient-knapsack-based-approach-for-avr-task-demand)
-  * [Table of Contents](#table-of-contents)
-  * [Features](#features)
-  * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
-    + [A - Open Virtual Appliance](#a---open-virtual-appliance)
-    + [B - Manual Install - Ubuntu 18.04](#b---manual-install---ubuntu-1804)
-  * [Dependencies](#dependencies)
-  * [Tested System Specifications](#tested-system-specifications)
-    + [Publication Data](#publication-data)
-    + [OVA Specifications](#ova-specifications)
-      - [OVA Account Information](#ova-account-information)
-  * [Detailed Dependency Installation](#detailed-dependency-installation)
-    + [Step-By-Step Installation and Execution](#step-by-step-installation-and-execution)
-  * [How to Use this Artifact - Getting Started - Basic Evaluation](#how-to-use-this-artifact---getting-started---basic-evaluation)
-    + [Evaluation Elements](#evaluation-elements)
-    + [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract)
-    + [Element No.2 - Average Improvement of 77 Times - Abstract](#element-no2---average-improvement-of-77-times---abstract)
-    + [Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I](#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
-    + [Element No.4 - A More General Task Set - Task Set 2 - Table II](#element-no4---a-more-general-task-set---task-set-2---table-ii)
-    + [Element No.5 - Runtime Comparison of Different Algorithms - Table III.a](#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
-    + [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
-    + [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
-    + [Folder Structure Explanation](#folder-structure-explanation)
-  * [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
-    + [Editing Custom Task Sets](#editing-custom-task-sets)
-      - [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
-      - [Configuring Right Boundary Speed Profiles](#configuring-right-boundary-speed-profiles)
-      - [Configuring Acceleration](#configuring-acceleration)
-    + [Running Custom Task Sets](#running-custom-task-sets)
-      - [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
-      - [DRT-Based Demand Calculation](#drt-based-demand-calculation)
-  * [File-by-File Descriptions](#file-by-file-descriptions)
-  * [Publication Information](#publication-information)
-    + [Research Publication](#research-publication)
-    + [Authors & Contact](#authors---contact)
-  * [Appendix](#appendix)
-    + [Appendix A: Version Checking](#appendix-a--version-checking)
+* [Features](#features)
+* [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
+  * [Option A - Open Virtual Appliance](#option-a---open-virtual-appliance)
+  * [Option B - Manual Install - Ubuntu 18.04](#option-b---manual-install---ubuntu-1804)
+* [How to Use this Artifact - Getting Started - Basic Evaluation](#how-to-use-this-artifact---getting-started---basic-evaluation)
+  * [Evaluation Elements](#evaluation-elements)
+  * [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract)
+  * [Element No.2 - Average Improvement of 77 Times - Abstract](#element-no2---average-improvement-of-77-times---abstract)
+  * [Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I](#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
+  * [Element No.4 - A More General Task Set - Task Set 2 - Table II](#element-no4---a-more-general-task-set---task-set-2---table-ii)
+  * [Element No.5 - Runtime Comparison of Different Algorithms - Table III.a](#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
+  * [Element No.6 - Runtime Comparison of Different Algorithms - Table III.b](#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
+  * [Element No.7 - Runtime Comparison of Different Algorithms - Table III.c](#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
+  * [Folder Structure Explanation](#folder-structure-explanation)
+* [Customizing Execution (Extended Evaluation)](#customizing-execution--extended-evaluation-)
+  * [Editing Custom Task Sets](#editing-custom-task-sets)
+    * [Configuring Adaptive-Variable Rate Worst-Case Execution Time Profiles (and Number of Modes)](#configuring-adaptive-variable-rate-worst-case-execution-time-profiles--and-number-of-modes-)
+    * [Configuring Right Boundary Speed Profiles](#configuring-right-boundary-speed-profiles)
+    * [Configuring Acceleration](#configuring-acceleration)
+  * [Running Custom Task Sets](#running-custom-task-sets)
+    * [Knapsack-Based Demand Calculation](#knapsack-based-demand-calculation)
+    * [DRT-Based Demand Calculation](#drt-based-demand-calculation)
+* [File-by-File Descriptions](#file-by-file-descriptions)
+* [Publication Information](#publication-information)
+  * [Research Publication](#research-publication)
+  * [Authors & Contact](#authors---contact)
+* [Appendix](#appendix)
+* [Appendix A - Dependencies](#appendix-a---dependencies)
+* [Appendix B - Tested System Specifications](#appendix-b---tested-system-specifications)
+  * [Original System - Publication Data](#original-system---publication-data)
+  * [OVA Host and Guest Systems](#ova-host-and-guest-systems)
+* [Appendix C - OVA Account Information](#appendix-c---ova-account-information)
+* [Appendix D - Step-By-Step Installation and Execution](#appendix-d---step-by-step-installation-and-execution)
+* [Appendix E: Version Checking](#appendix-e--version-checking)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -51,7 +48,11 @@
 
 ## Quickstart - Quick Evaluation
 
-### A - Open Virtual Appliance
+Evaluators are encouraged to:
+1. Select a Quickstart Option (A or B)
+2. Navigate to the  [How to Use This Artifact](#how-to-use-this-artifact---getting-started---basic-evaluation) for instructions on evaluating all elements
+
+### Option A - Open Virtual Appliance
 
 0. __If not already installed, download and install [Oracle VirtualBox](https://www.virtualbox.org/) from the VirtualBox [downloads page](https://www.virtualbox.org/wiki/Downloads).__.
 
@@ -73,9 +74,9 @@
 
 8. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
-_Note: Completion time for one run may take at least 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
+_Note: Completion time for __one run__ (the default) may take at least __7 minutes__ for the Knapsack-Based algorithm and __15.8 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
 
-### B - Manual Install - Ubuntu 18.04
+### Option B - Manual Install - Ubuntu 18.04
 
 1. Navigate to the desired cloning directory and execute the following script in the terminal:
 
@@ -86,126 +87,7 @@ _Note: Completion time for one run may take at least 7 minutes for the Knapsack-
 
 2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
-_Note: Completion time for one run will take around of 7 minutes for the Knapsack-Based algorithm and 15.8 hours for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
-
-## Dependencies
-
-| Link | Version Tested |
-| ------ | ----------- |
-| [Python3](https://www.python.org/) | 3.6.5 |
-| [pip](https://pypi.org/project/pip/) | 9.0.1 |
-| [NumPy](http://www.numpy.org/) | 1.13.3 |
-| [matplotlib](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
-| [tkinter](https://wiki.python.org/moin/TkInter) | 8.6 |
-
-## Tested System Specifications
-
-The following section describes system specifications for all systems (virtual and real) used in the creation of this artifact, publication data, and virtual appliance. 
-
-### Publication Data
-
-The data displayed in the RTSS 2018 publication can be found in the `pubData/` folder. This data was obtained by running on a system with the following specifications:
-
-| Property | Description |
-| ------ | ----------- |
-| OS | Ubuntu 18.04 LTS |
-| Arch | 64-bit |
-| CPU | Intel Core i7-6700 CPU @ 3.40 GHz x 8 |
-| RAM | 8GB (7.7GB Available) |
-
-### OVA Specifications
-
-The OVA for use by the RTSS 2018 Artifact Evaluation Committee and the public was created and tested with the following system specifications:
-
-| Host Property | Description |
-| ------ | ----------- |
-| OS | Ubuntu 18.04 LTS |
-| Arch | 64-bit |
-| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
-| RAM | __16GB (15.7GB Available)__ |
-
-<br>
-
-| Guest Property | Description |
-| ------ | ----------- |
-| OS | Ubuntu 18.04 LTS |
-| Arch | 64-bit |
-| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 4__ |
-| RAM | __8GB (7.8GB Available)__ |
-
-#### OVA Account Information
-
-```sh
-Login:      knapsackavr
-Password:   RTSS2018
-```
-
-## Detailed Dependency Installation
-
-### Step-By-Step Installation and Execution
-
-1. Installing [git](https://git-scm.com/) [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
-
-    ```sh
-    sudo apt-get install git
-    ```
-
-2. Installing [Python3](https://www.python.org/) [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
-
-    ```sh
-    sudo apt-get update
-    sudo apt-get install python3
-    ```
-
-3. Installing [pip](https://pypi.org/project/pip/) [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
-
-    ```sh
-    sudo apt-get install python-pip python3-pip
-    ```
-
-4. Installing [Tkinter](https://wiki.python.org/moin/TkInter) [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)]:
-
-    ```sh
-    sudo apt-get install python3-tk
-    ```
-
-5. Installing [NumPy](http://www.numpy.org/) via pip [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
-
-    ```sh
-    sudo pip3 install -U numpy
-    ```
-
-6. Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[5](https://matplotlib.org/users/installing.html)]:
-
-    ```sh
-    sudo pip3 install -U matplotlib
-    ```
-
-7. Clone the git repo:
-
-    ```sh
-    git clone https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018.git
-    ```
-
-8. Navigate to the git repo:
-
-    ```sh
-    cd Efficient-Knapsack-for-AVR-tasks-RTSS2018
-    ```
-
-9. Run the default script:
-
-    ```sh
-    python3 runAll.py
-    ```
-
-10. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
-
-[[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
-[[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
-[[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
-[[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
-[[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
+_Note: Completion time for __one run__ (the default) may take at least __7 minutes__ for the Knapsack-Based algorithm and __15.8 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
 
 ## How to Use this Artifact - Getting Started - Basic Evaluation
 
@@ -423,7 +305,124 @@ Nashville, Tennessee, USA
 
 ## Appendix
 
-### Appendix A: Version Checking
+## Appendix A - Dependencies
+
+| Link | Version Tested |
+| ------ | ----------- |
+| [Python3](https://www.python.org/) | 3.6.5 |
+| [pip](https://pypi.org/project/pip/) | 9.0.1 |
+| [NumPy](http://www.numpy.org/) | 1.13.3 |
+| [matplotlib](https://matplotlib.org/api/pyplot_summary.html) | 2.2.3 |
+| [tkinter](https://wiki.python.org/moin/TkInter) | 8.6 |
+
+## Appendix B - Tested System Specifications
+
+The following section describes system specifications for all systems (virtual and real) used in the creation of this artifact, publication data, and virtual appliance. 
+
+### Original System - Publication Data
+
+The data displayed in the RTSS 2018 publication can be found in the `pubData/` folder. This data was obtained by running on a system with the following specifications:
+
+| Property | Description |
+| ------ | ----------- |
+| OS | Ubuntu 18.04 LTS |
+| Arch | 64-bit |
+| CPU | Intel Core i7-6700 CPU @ 3.40 GHz x 8 |
+| RAM | 8GB (7.7GB Available) |
+
+### OVA Host and Guest Systems
+
+The OVA for use by the RTSS 2018 Artifact Evaluation Committee and the public was created and tested with the following system specifications:
+
+| Host Property | Description |
+| ------ | ----------- |
+| OS | Ubuntu 18.04 LTS |
+| Arch | 64-bit |
+| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 8__ |
+| RAM | __16GB (15.7GB Available)__ |
+
+<br>
+
+| Guest Property | Description |
+| ------ | ----------- |
+| OS | Ubuntu 18.04 LTS |
+| Arch | 64-bit |
+| CPU | Intel Core i7-6700HQ CPU @ 2.60GHz __× 4__ |
+| RAM | __8GB (7.8GB Available)__ |
+
+## Appendix C - OVA Account Information
+
+```sh
+Login:      knapsackavr
+Password:   RTSS2018
+```
+
+## Appendix D - Step-By-Step Installation and Execution
+
+1. Installing [git](https://git-scm.com/) [[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)]:
+
+    ```sh
+    sudo apt-get install git
+    ```
+
+2. Installing [Python3](https://www.python.org/) [[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)]:
+
+    ```sh
+    sudo apt-get update
+    sudo apt-get install python3
+    ```
+
+3. Installing [pip](https://pypi.org/project/pip/) [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+
+    ```sh
+    sudo apt-get install python-pip python3-pip
+    ```
+
+4. Installing [Tkinter](https://wiki.python.org/moin/TkInter) [[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)]:
+
+    ```sh
+    sudo apt-get install python3-tk
+    ```
+
+5. Installing [NumPy](http://www.numpy.org/) via pip [[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]:
+
+    ```sh
+    sudo pip3 install -U numpy
+    ```
+
+6. Installing [matplotlib](https://matplotlib.org/api/pyplot_summary.html) via pip [[5](https://matplotlib.org/users/installing.html)]:
+
+    ```sh
+    sudo pip3 install -U matplotlib
+    ```
+
+7. Clone the git repo:
+
+    ```sh
+    git clone https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018.git
+    ```
+
+8. Navigate to the git repo:
+
+    ```sh
+    cd Efficient-Knapsack-for-AVR-tasks-RTSS2018
+    ```
+
+9. Run the default script:
+
+    ```sh
+    python3 runAll.py
+    ```
+
+10. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
+
+[[1](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)] [https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)  
+[[2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)] [https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2](https://askubuntu.com/questions/798123/how-do-i-install-python-3-5-2)  
+[[3](https://askubuntu.com/questions/748929/no-module-named-numpy)]  [https://askubuntu.com/questions/748929/no-module-named-numpy](https://askubuntu.com/questions/748929/no-module-named-numpy)  
+[[4](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)] [https://stackoverflow.com/questions/4783810/install-tkinter-for-python](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)  
+[[5](https://matplotlib.org/users/installing.html)] [https://matplotlib.org/users/installing.html](https://matplotlib.org/users/installing.html)  
+
+## Appendix E: Version Checking
 
 Checking [Python3](https://www.python.org/) version [[6](https://askubuntu.com/questions/505081/what-version-of-python-do-i-have)]:
 
