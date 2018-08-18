@@ -744,3 +744,9 @@ Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) version in
 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
 [[8](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)] [https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)  
 [[9](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
+
+## Appendix F - Known Issues
+
+1. Windows Compatibility via Anaconda: Attempts to execute the scripts using the __Anaconda Distribution__ on __Windows__ have lead to issues with [matplotlib](https://matplotlib.org/api/pyplot_summary.html). _Recommendation_: Use the provided OVA or Ubuntu 18.04 install instructions.
+
+2. Execution Termination: High Number of Modes or run counts requested during script execution (especially on slower hardware) can greatly increase CPU and RAM usage, sometimes leading to process termination. _Recommendation_: Beware of long runtimes (15+ hours for one run) and terminations via SIGKILL if memory consumption is deemed too high. Avoid high Number of Modes and run count requests for the DRTAlg.py and DRTMultiAVR.py scripts.
