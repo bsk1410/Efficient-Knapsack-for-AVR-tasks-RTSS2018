@@ -49,6 +49,7 @@
 * [Appendix C - OVA Account Information](#appendix-c---ova-account-information)
 * [Appendix D - Step-By-Step Installation and Execution](#appendix-d---step-by-step-installation-and-execution)
 * [Appendix E - Version Checking](#appendix-e---version-checking)
+* [Appendix F - Known Issues](#appendix-f---known-issues)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -123,7 +124,17 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 ### Element No.1 - At Least 10 Times Faster - Abstract
 
+1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
+
+```sh
+python3 runAll.py -r 10
+```
+
+2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H). __The minimum, maximum, and average improvements will display in the terminal.__
+
 ### Element No.2 - Average Improvement of 77 Times - Abstract
+
+1. Repeat the steps in [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract). __The minimum, maximum, and average improvements will display in the terminal.__
 
 ### Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I
 
@@ -151,7 +162,7 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 ### Element No.5 - Runtime Comparison of Different Algorithms - Table III.a
 
-1. In the terminal navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, __enter__:
+1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
 
     ```sh
     python3 NewAlg.py -t 1 -v
@@ -373,7 +384,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in `DRTAlgOutput.txt`.
+    If `-v` is entered, the calculated demand and demand update timestamps are logged in `DRTAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### DRTMultiAVR.py
@@ -439,7 +450,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in `NewAlgOutput.txt`.
+    If `-v` is entered, the calculated demand and demand update timestamps are logged in `NewAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### NewMultiAVR.py
@@ -734,3 +745,9 @@ Checking [matplotlib](https://matplotlib.org/api/pyplot_summary.html) version in
 [[7](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)] [https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using](https://stackoverflow.com/questions/1a520234/how-do-i-check-which-version-of-numpy-im-using)  
 [[8](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)] [https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin](https://stackoverflow.com/questions/35999344/how-to-determine-what-version-of-python3-tkinter-is-installed-on-my-linux-machin)  
 [[9](https://stackoverflow.com/questions/21473600/matplotlib-version)] [https://stackoverflow.com/questions/21473600/matplotlib-version](https://stackoverflow.com/questions/21473600/matplotlib-version)
+
+## Appendix F - Known Issues
+
+1. Windows Compatibility via Anaconda: Attempts to execute the scripts using the __Anaconda Distribution__ on __Windows__ have lead to issues with [matplotlib](https://matplotlib.org/api/pyplot_summary.html). _Recommendation_: Use the provided OVA or Ubuntu 18.04 install instructions.
+
+2. Execution Termination: High Number of Modes or run counts requested during script execution (especially on slower hardware) can greatly increase CPU and RAM usage, sometimes leading to process termination. _Recommendation_: Beware of long runtimes (15+ hours for one run) and terminations via SIGKILL if memory consumption is deemed too high. Avoid high Number of Modes and run count requests for the DRTAlg.py and DRTMultiAVR.py scripts.
