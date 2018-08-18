@@ -49,6 +49,7 @@
 * [Appendix C - OVA Account Information](#appendix-c---ova-account-information)
 * [Appendix D - Step-By-Step Installation and Execution](#appendix-d---step-by-step-installation-and-execution)
 * [Appendix E - Version Checking](#appendix-e---version-checking)
+* [Appendix F - Known Issues](#appendix-f---known-issues)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
