@@ -123,7 +123,17 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 ### Element No.1 - At Least 10 Times Faster - Abstract
 
+1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
+
+```sh
+python3 runAll.py -r 10
+```
+
+2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H). __The minimum, maximum, and average improvements will display in the terminal.__
+
 ### Element No.2 - Average Improvement of 77 Times - Abstract
+
+1. Repeat the steps in [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract). __The minimum, maximum, and average improvements will display in the terminal.__
 
 ### Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I
 
@@ -151,7 +161,7 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 ### Element No.5 - Runtime Comparison of Different Algorithms - Table III.a
 
-1. In the terminal navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, __enter__:
+1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
 
     ```sh
     python3 NewAlg.py -t 1 -v
