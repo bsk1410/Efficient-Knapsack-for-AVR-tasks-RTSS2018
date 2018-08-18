@@ -55,7 +55,7 @@
 
 ## Features
 
-* A Python3 implementation of the Knapsack-based demand calculations as found in Bijinemula et al.
+* A Python3 implementation of the Knapsack-based demand calculations as found in [Bijinemula et al](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
 * A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
 * A graphical comparison of the above implementations using matplotlib
 
@@ -88,7 +88,7 @@ Evaluators are encouraged to:
 
 8. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
-_Note: Completion time for __one run__ (the default) may take at least __7 minutes__ for the Knapsack-Based algorithm and __15.8 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__._
+_Note: Completion time for __one run__ (the default) may take at least __16 hours__ under __[Tested System Specifications](#tested-system-specifications)__._
 
 ### Option B - Manual Install - Ubuntu 18.04
 
@@ -111,13 +111,13 @@ This artifact serves as a demonstration of repeatability for claims, tables, and
 
 Important claims, figures, and tables in the paper which can be reproduced and validated with this artifact include:
 
-1. The knapsack approach, "is at least 10 times faster" - Abstract
-2. The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract
-3. Task Set Used by Existing Work (Task Set #1) - Table I
-4. A More General Task Set (Task Set #2) - Table II
-5. Runtime Comparison of Different Algorithms - Table III.a
-6. Runtime Comparison of Different Algorithms - Table III.b
-7. Runtime Comparison of Different Algorithms - Table III.c
+1. [The knapsack approach, "is at least 10 times faster" - Abstract](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no1---at-least-10-times-faster---abstract)
+2. [The knapsack approach has, "an average improvement of 77 times when compared with the state-of-the-art technique - Abstract](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no2---average-improvement-of-77-times---abstract)
+3. [Task Set Used by Existing Work (Task Set #1) - Table I](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
+4. [A More General Task Set (Task Set #2) - Table II](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no4---a-more-general-task-set---task-set-2---table-ii)
+5. [Runtime Comparison of Different Algorithms - Table III.a](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
+6. [Runtime Comparison of Different Algorithms - Table III.b](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
+7. [Runtime Comparison of Different Algorithms - Table III.c](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no7---runtime-comparison-of-different-algorithms---table-iiic)
 
 The remaining sections will guide evaluators through evaluating each claim independent of installation method.
 
@@ -127,7 +127,7 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 ### Element No.3 - Task Set Used by Existing Work - Task Set 1 - Table I
 
-1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+1. In the terminal navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, __enter__:
 
     ```sh
     cat taskSet1.json
@@ -135,11 +135,11 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 2. The file displayed is the json encoding of the Table I data, "Task Set Used by Existing Work".
 
-3. To execute this task set for runtime comparison, see Element No.5: Runtime Comparison of Different Algorithms - Table III.a
+3. To execute this task set for runtime comparison, see [Element No.5: Runtime Comparison of Different Algorithms - Table III.a](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no5---runtime-comparison-of-different-algorithms---table-iiia)
 
 ### Element No.4 - A More General Task Set - Task Set 2 - Table II
 
-1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+1. In the terminal navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, __enter__:
 
     ```sh
     cat taskSet2.json
@@ -147,14 +147,14 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 2. The file displayed is the json encoding of the Table II data, "A more general task set".
 
-3. To execute this task set for runtime comparison, see Element No.6: Runtime Comparison of Different Algorithms - Table III.b
+3. To execute this task set for runtime comparison, see [Element No.6: Runtime Comparison of Different Algorithms - Table III.b](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no6---runtime-comparison-of-different-algorithms---table-iiib)
 
 ### Element No.5 - Runtime Comparison of Different Algorithms - Table III.a
 
-1. Navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
+1. In the terminal navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, __enter__:
 
     ```sh
-    python3 NewAlg.py -t 1
+    python3 NewAlg.py -t 1 -v
     ```
 
     This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal.
@@ -162,7 +162,7 @@ The remaining sections will guide evaluators through evaluating each claim indep
 2. When the above execution is completed, in the terminal __enter__:
 
     ```sh
-    python3 DRTAlg.py -t 1
+    python3 DRTAlg.py -t 1 -v
     ```
 
     This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal
@@ -263,7 +263,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 1. To __edit__ the execution times, use a command line editor (like `nano` or `vi`) or graphical editor (like _gedit_ if using the OVA) to change the  `taskSetCustom.json` file. Edit __line 3 - Execution Times__. Example:
 
     ```sh
-    "executionTimes": [965, 576, 424, 343, 277, 246]
+    "executionTimes": [965, 576, 424, 343, 277, 246],
     ```
 
     ...and replace the default execution times with your own.
@@ -301,7 +301,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 1. To execute the Knapsack-Based Demand Calculation on the custom task set, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and, in the terminal, __enter__:
 
     ```sh
-    python3 NewAlg.py -t 3
+    python3 NewAlg.py -t 3 -v
     ```
 
     The `-t 3` parameter specifies execution with the taskset parameters in `taskSetCustom.json`.
@@ -365,22 +365,22 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Example:
 
-    The following example completes one run of the __DRT-Based Demand Calculation__ using the __Task Set #2__ in Bijinemula et al.:
+    The following example completes one run of the __DRT-Based Demand Calculation__ using the __Task Set #2__ in Bijinemula et al. and logs the demand for each time-step in DRTAlgOutput.txt:
 
     ```sh
-    python3 DRTAlg.py -t 2
+    python3 DRTAlg.py -t 2 -v
     ```
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in __`DRTAlgOutput.txt`.
+    The calculated demand and demand update timestamps are logged in `DRTAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### DRTMultiAVR.py
 
 * Description:
 
-    Python3 script for generating randomized AVR task sets split into _M_ modes and calculating demand using __DRT-based calculations__.
+    Python3 script for generating randomized AVR task set with _M_ modes and calculating the demand using __DRT-based calculations__.
 
     ```sh
     python3 DRTMultiAVR.py M
@@ -388,7 +388,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Inputs:
 
-  * __M__ : A positive integer indicating the number of modes to split the randomized AVR task set into.
+  * __M__ : A positive integer indicating the number of modes the randomized AVR task set has.
 
 * Example:
 
@@ -400,7 +400,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The runtime is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+    The runtime is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via the command line.
 
 ### README.md
 
@@ -439,14 +439,14 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in __`NewAlgOutput.txt`.
+    The calculated demand and demand update timestamps are logged in `NewAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### NewMultiAVR.py
 
 * Description:
 
-    Python3 script for generating randomized AVR task sets split into _M_ modes and calculating demand using __Knapsack-based__ calculations.
+    Python3 script for generating randomized AVR task set with _M_ modes and calculating the demand using __Knapsack-based__ calculations.
 
     ```sh
     python3 NewMultiAVR.py M
@@ -454,7 +454,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Inputs:
 
-  * __M__ : A positive integer indicating the number of modes to split the randomized AVR task set into.
+  * __M__ : A positive integer indicating the number of modes the randomized AVR task set has.
 
 * Example:
 
@@ -466,7 +466,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+    The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via the command line.
 
 ### plotGraphs.py
 
@@ -491,18 +491,18 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Description:
 
-    Python3 script for executing multiple runs of DRT and Knapsack-based demand calculations over a varying number of modes, generating improvement calculations, and graphing runtime vs number of modes to compare both algorithms.  
+    Python3 script for executing multiple runs of DRT and Knapsack-based demand calculations over task sets with varying number of modes, generating improvement calculations, and graphing runtime vs number of modes to compare both algorithms.  
 
 * Inputs:
 
   * __-h__ : Help flag for showing detailed help
   * __-r N__ : Run Count Indicator identifying the number of runs per mode to execute where __N__ is a positive integer.  _Default:_ 1 run.
-  * __-m N__ : Minimum Number of Modes Indicator identifying the starting number of modes to divide generated task sets into where __N__ is a positive integer. _Default:_ 6 mode split.
-  * __-M N__ : Maximum Number of Modes Indicator identifying the number of modes to divide generated task sets into where __N__ is a positive integer __greater than the Minimum Number of Modes__. _Default:_ 15 mode split.
+  * __-m N__ : Minimum Number of Modes Indicator identifying the starting number of modes to assign to the generated task sets where __N__ is a positive integer. _Default:_ 6 mode split.
+  * __-M N__ : Maximum Number of Modes Indicator identifying the number of modes to assign to the generated task sets where __N__ is a positive integer __greater than the Minimum Number of Modes__. _Default:_ 15 mode split.
 
 * Example:
 
-    The following example completes 10 runs of the __DRT-Based Demand Calculation__ and __Knapsack-Based Demand Calculation__ on a randomized AVR task set split into __6__ to __15__ modes:
+    The following example completes 10 runs of the __DRT-Based Demand Calculation__ and __Knapsack-Based Demand Calculation__ on a randomized AVR task sets with modes from __6__ to __15__:
 
     ```sh
     python3 runAll.py -r 10 -m 6 -M 15
@@ -510,14 +510,16 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
     _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits.
 
-    __Warning:__ Executing the [runAll.py](#runAll.py) script with large run counts, mode counts, or a combination thereof can greatly increase runtime.
+    __Warning:__ Executing the [runAll.py](#runAll.py) script with large run counts, mode counts, or a combination thereof can greatly increase runtime and might cause a RAM overload and make the system unstable. However, the file runAll.py can be executed multiple times with a smaller value of run count each time and get a graph updated with the runtime values averaged till the current run each time.
 
-    Example: Completion time for __one run__ (the default) may take at least __7 minutes__ for the Knapsack-Based algorithm and __15.8 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__.
+    Example: Completion time for __one run__ (the default) may take at least __16 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__.
 
 * Output:
 
-  * The runtime of DRT-based calculations is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
-  * The runtime is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+  * The runtime of Knapsack-based calculations for randomized task sets is logged in __`NewMultiAVROutputs/NewAlg_Multi_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+  * The runtime of DRT-based calculations for randomized task sets is logged in __`DRTMultiAVROutputs/DRTAlg_MultiAVR_M.txt`__ where __`M`__ is the number of modes passed in via command line.
+  * The runtime of Knapsack-based calculations for [task set-1](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no3---task-set-used-by-existing-work---task-set-1---table-i) and [task set-2](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no4---a-more-general-task-set---task-set-2---table-ii) is logged in __`NewMultiAVROutputs/NewAlg_N.txt`__ where `N=1` represents [task set-1](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
+  * The runtime of DRT-based calculations for [task set-1](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no3---task-set-used-by-existing-work---task-set-1---table-i) and [task set-2](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no4---a-more-general-task-set---task-set-2---table-ii) is logged in __`DRTMultiAVROutputs/DRTAlg_N.txt`__ where `N=1` represents [task set-1](https://github.com/bsk1410/Efficient-Knapsack-for-AVR-tasks-RTSS2018#element-no3---task-set-used-by-existing-work---task-set-1---table-i)
   * Improvement calculations are printed to terminal.
   * A graph of runtime vs number of modes is generated based on data in `NewMultiAVROutputs/` and `DRTMultiAVROutputs/`.
 
@@ -525,7 +527,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Description:
 
-    JSON file specifying Task Set 1 per Bijinemula et al.
+    JSON file specifying Task Set 1 per [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
     ```json
     {
@@ -539,7 +541,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Description:
 
-    JSON file specifying Task Set 2 per Bijinemula et al.
+    JSON file specifying Task Set 2 per [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H)
 
     ```json
     {
@@ -567,7 +569,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 ### RTSS 2018 Publication
 
-_An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by Bijinemula et al. (Accepted)  
+_An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H) (Accepted)  
 Real-Time Systems Symposium ([RTSS](http://2018.rtss.org/)) 2018 - Main Real-Time Track  
 Nashville, Tennessee, USA
 
@@ -575,10 +577,10 @@ Nashville, Tennessee, USA
 
 | Author | Department | University | Location | Email |
 | ------ | ---------- | ---------- | -------- | ----- |
-| Sandeep Kumar Bijinemula | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, USA | bsk1410@vt.edu |
-| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, USA | aaron.willcock@wayne.edu |
-| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, USA | tchantem@vt.edu |
-| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, USA | fishern@wayne.edu |
+| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
+| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
+| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
+| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
 
 ## Appendix
 
