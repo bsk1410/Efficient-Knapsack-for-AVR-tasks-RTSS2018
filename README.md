@@ -384,7 +384,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in `DRTAlgOutput.txt`.
+    If `-v` is entered, the calculated demand and demand update timestamps are logged in `DRTAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### DRTMultiAVR.py
@@ -450,7 +450,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 * Output:
 
-    The calculated demand and demand update timestamps are logged in `NewAlgOutput.txt`.
+    If `-v` is entered, the calculated demand and demand update timestamps are logged in `NewAlgOutput.txt`.
     Runtime is printed to the terminal.
 
 ### NewMultiAVR.py
