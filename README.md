@@ -56,7 +56,7 @@
 ## Features
 
 * A Python3 implementation of the Knapsack-based demand calculations as found in [Bijinemula et al](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
-* A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al.
+* A Python3 implementation of the Digraph Real-Time (DRT) demand calculations as found in [_Refinement of Workload Models for Engine Controllers by State Space Partitioning_](http://user.it.uu.se/~yi/pdf-files/2017/ecrts17.pdf) by Mohaqeqi et al. This is the most closely related work.
 * A graphical comparison of the above implementations using matplotlib
 
 ## Quickstart - Quick Evaluation
