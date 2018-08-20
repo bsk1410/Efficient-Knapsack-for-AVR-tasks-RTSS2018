@@ -84,6 +84,7 @@ Evaluators are encouraged to:
 7. In the terminal, __enter__:
 
     ```sh
+    git pull
     python3 runAll.py
     ```
 
