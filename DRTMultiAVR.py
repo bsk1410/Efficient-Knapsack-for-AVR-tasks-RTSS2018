@@ -1,12 +1,18 @@
-from time import perf_counter               #Performance counter - clock with highest available resolution
-from math import sqrt                       #Square root
-from bisect import bisect_left              #Provides would-be index of element to insert
-from collections import defaultdict         #Dictionary that does not throw KeyErrors
-import numpy as np                          #http://www.numpy.org/
-import random                               #RNG
-import sys                                  #Command-line arguments
+from time import perf_counter           #Performance counter - clock with highest available resolution
+from math import sqrt                   #Square root
+from bisect import bisect_left          #Provides would-be index of element to insert
+from collections import defaultdict     #Dictionary that does not throw KeyErrors
+import numpy as np                      #http://www.numpy.org/
+import random                           #RNG
+import sys                              #Command-line arguments
+import os                               #Directory check and creation
 
 def DRTMultiAVRgen(M):
+
+    #If no directory exists...
+    if not os.path.exists('DRTMultiAVROutputs/'):
+        #Create output directory
+        os.makedirs('DRTMultiAVROutputs/')
 
     #Units
     #a_max, a_min : revolutions / min^2
