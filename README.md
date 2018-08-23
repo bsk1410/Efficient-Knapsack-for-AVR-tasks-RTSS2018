@@ -1,7 +1,39 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
+## Authors - Contact
+
+| Author | Department | University | Location | Email |
+| ------ | ---------- | ---------- | -------- | ----- |
+| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
+| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
+| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
+| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
+
+## Acknowledgements
+
+<table width="100%" style="text-align: center" cellpadding="20">
+  <tr>
+    <td style="vertical-align:middle">
+    <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="100px"/>
+    </td>
+    <td style="vertical-align:middle">
+    <img src="https://www.assets.cms.vt.edu/images/HorizontalStacked/HorizontalStacked_RGB.svg" height="63px"/>
+    </td>
+    <td style="vertical-align:middle">
+    <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="50px"/>
+    </td>
+  </tr>
+</table> 
+
+This research has been supported in part by the [US National
+Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos.  [0953585](https://nsf.gov/awardsearch/showAward?AWD_ID=0953585),  [1205338](https://nsf.gov/awardsearch/showAward?AWD_ID=1205338),  &
+[1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185)) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
+[Wayne State University](https://wayne.edu).
+
 ## Table of Contents
 
+* [Authors - Contact](#authors---contact)
+* [Acknowledgements](#acknowledgements)
 * [Features](#features)
 * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
   * [Option A - Open Virtual Appliance](#option-a---open-virtual-appliance)
@@ -38,9 +70,7 @@
   * [taskSet1.json](#taskset1json)
   * [taskSet2.json](#taskset2json)
   * [taskSetCustom.json](#tasksetcustomjson)
-* [Publication Information](#publication-information)
-  * [RTSS 2018 Publication](#rtss-2018-publication)
-  * [Authors - Contact](#authors---contact)
+* [RTSS 2018 Publication](#rtss-2018-publication)
 * [Appendix](#appendix)
 * [Appendix A - Dependencies](#appendix-a---dependencies)
 * [Appendix B - Tested System Specifications](#appendix-b---tested-system-specifications)
@@ -577,43 +607,11 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     }
     ```
 
-## Publication Information
-
-### RTSS 2018 Publication
+## RTSS 2018 Publication
 
 _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H) (Accepted)  
 Real-Time Systems Symposium ([RTSS](http://2018.rtss.org/)) 2018 - Main Real-Time Track  
 Nashville, Tennessee, USA
-
-### Authors - Contact
-
-| Author | Department | University | Location | Email |
-| ------ | ---------- | ---------- | -------- | ----- |
-| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
-| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
-| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
-| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
-
-## Acknowledgements
-
-<table width="100%" style="text-align: center" cellpadding="20">
-  <tr>
-    <td style="vertical-align:middle">
-    <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="100px"/>
-    </td>
-    <td style="vertical-align:middle">
-    <img src="https://www.assets.cms.vt.edu/images/HorizontalStacked/HorizontalStacked_RGB.svg" height="63px"/>
-    </td>
-    <td style="vertical-align:middle">
-    <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="50px"/>
-    </td>
-  </tr>
-</table> 
-
-This research has been supported in part by the [US National
-Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos.  [0953585](https://nsf.gov/awardsearch/showAward?AWD_ID=0953585),  [1205338](https://nsf.gov/awardsearch/showAward?AWD_ID=1205338),  &
-[1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185)) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
-[Wayne State University](https://wayne.edu).
 
 ## Appendix
 
