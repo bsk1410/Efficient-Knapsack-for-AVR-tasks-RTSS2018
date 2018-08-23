@@ -596,14 +596,14 @@ Nashville, Tennessee, USA
 
 ## Acknowledgements
 
- <table align="center" style="width:100%">
+ <table align="center">
   <tr>
-    <td valign="middle">
+    <td style="vertical-align:middle">
     <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="drawing" height="200px"/>
     </td>
   </tr>
   <tr>
-    <td valign="middle">
+    <td style="vertical-align:middle">
     <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="100px"/>
     <img src="https://vt.edu/content/vt_edu/en/brand/resources/logo-guidelines/jcr:content/content/adaptiveimage.transform/xl-medium/image.jpg" height="200px"/>
     </td>
