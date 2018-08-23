@@ -594,6 +594,20 @@ Nashville, Tennessee, USA
 | [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
 | [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
 
+## Acknowledgements
+
+<img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="drawing" height="200px"/>
+
+<br>
+
+<img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="200px"/>
+<img src="https://vt.edu/content/vt_edu/en/brand/resources/logo-guidelines/jcr:content/content/adaptiveimage.transform/xl-medium/image.jpg" height="200px"/>
+
+This research has been supported in part by the [US National
+Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos.  [0953585](https://nsf.gov/awardsearch/showAward?AWD_ID=0953585),  [1205338](https://nsf.gov/awardsearch/showAward?AWD_ID=1205338),  &
+[1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185)) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
+[Wayne State University](https://wayne.edu).
+
 ## Appendix
 
 ## Appendix A - Dependencies
