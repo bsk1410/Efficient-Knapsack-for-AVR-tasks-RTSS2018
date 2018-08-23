@@ -1,14 +1,5 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
-## Authors - Contact
-
-| Author | Department | University | Location | Email |
-| ------ | ---------- | ---------- | -------- | ----- |
-| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
-| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
-| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
-| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
-
 ## Acknowledgements
 
 <table width="100%" style="text-align: center" cellpadding="20">
@@ -30,10 +21,19 @@ Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index
 [1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185)) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
 [Wayne State University](https://wayne.edu).
 
+## Authors - Contact
+
+| Author | Department | University | Location | Email |
+| ------ | ---------- | ---------- | -------- | ----- |
+| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
+| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
+| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
+| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
+
 ## Table of Contents
 
-* [Authors - Contact](#authors---contact)
 * [Acknowledgements](#acknowledgements)
+* [Authors - Contact](#authors---contact)
 * [Features](#features)
 * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
   * [Option A - Open Virtual Appliance](#option-a---open-virtual-appliance)
