@@ -1,6 +1,6 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
-## Acknowledgements
+## Acknowledgments
 
 <table width="100%" style="text-align: center" cellpadding="20">
   <tr>
@@ -32,7 +32,7 @@ Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index
 
 ## Table of Contents
 
-* [Acknowledgements](#acknowledgements)
+* [Acknowledgments](#acknowledgements)
 * [Authors - Contact](#authors---contact)
 * [Features](#features)
 * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
