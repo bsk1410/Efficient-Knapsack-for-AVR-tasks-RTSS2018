@@ -596,7 +596,7 @@ Nashville, Tennessee, USA
 
 ## Acknowledgements
 
-<table align="center" cellpadding="20">
+<table style="text-align: center" cellpadding="20">
   <tr>
     <td style="vertical-align:middle">
     <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="100px"/>
