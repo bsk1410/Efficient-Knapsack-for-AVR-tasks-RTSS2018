@@ -599,13 +599,13 @@ Nashville, Tennessee, USA
 <table align="center" cellpadding="20">
   <tr>
     <td style="vertical-align:middle">
-    <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="200px"/>
+    <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="100px"/>
     </td>
     <td style="vertical-align:middle">
-    <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="100px"/>
+    <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="50px"/>
     </td>
     <td style="vertical-align:middle">
-    <img src="https://www.assets.cms.vt.edu/images/HorizontalStacked/HorizontalStacked_RGB.svg" height="125px"/>
+    <img src="https://www.assets.cms.vt.edu/images/HorizontalStacked/HorizontalStacked_RGB.svg" height="63px"/>
     </td>
   </tr>
 </table> 
