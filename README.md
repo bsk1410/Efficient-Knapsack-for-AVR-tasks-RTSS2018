@@ -596,12 +596,19 @@ Nashville, Tennessee, USA
 
 ## Acknowledgements
 
-<img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="drawing" height="200px"/>
-
-<br>
-
-<img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="200px"/>
-<img src="https://vt.edu/content/vt_edu/en/brand/resources/logo-guidelines/jcr:content/content/adaptiveimage.transform/xl-medium/image.jpg" height="200px"/>
+ <table align="center" style="width:100%">
+  <tr>
+    <td valign="middle">
+    <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="drawing" height="200px"/>
+    </td>
+  </tr>
+  <tr>
+    <td valign="middle">
+    <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="100px"/>
+    <img src="https://vt.edu/content/vt_edu/en/brand/resources/logo-guidelines/jcr:content/content/adaptiveimage.transform/xl-medium/image.jpg" height="200px"/>
+    </td>
+  </tr>
+</table> 
 
 This research has been supported in part by the [US National
 Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos.  [0953585](https://nsf.gov/awardsearch/showAward?AWD_ID=0953585),  [1205338](https://nsf.gov/awardsearch/showAward?AWD_ID=1205338),  &
