@@ -82,7 +82,6 @@ Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
 ## Features
 
 * A Python3 implementation of the Knapsack-based demand calculations as found in [Bijinemula et al](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H).
@@ -156,9 +155,9 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
 
-```sh
-python3 runAll.py -r 10
-```
+    ```sh
+    python3 runAll.py -r 10
+    ```
 
 2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H). __The minimum, maximum, and average improvements will display in the terminal.__
 
