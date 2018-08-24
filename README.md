@@ -37,7 +37,7 @@ Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index
 
 ## Table of Contents
 
-* [Acknowledgments](#acknowledgements)
+* [Acknowledgments](#acknowledgments)
 * [Authors - Contact](#authors---contact)
 * [Features](#features)
 * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
