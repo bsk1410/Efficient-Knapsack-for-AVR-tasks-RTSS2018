@@ -17,7 +17,7 @@
 </table> 
 
 This research has been supported in part by the [US National
-Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  No. [1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185) \& [1618979](https://nsf.gov/awardsearch/showAward?AWD_ID=1618979))) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
+Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos. [1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185) \& [1618979](https://nsf.gov/awardsearch/showAward?AWD_ID=1618979))) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
 [Wayne State University](https://wayne.edu).
 
 ## Authors - Contact
