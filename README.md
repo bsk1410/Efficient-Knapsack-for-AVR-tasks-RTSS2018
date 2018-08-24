@@ -161,6 +161,8 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H). __The minimum, maximum, and average improvements will display in the terminal.__
 
+    _Warning: Completion time for __one run__ (the default) may take at least __16 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__. Executing the 10 runs in the above script may take __over 160 hours__._
+
 ### Element No.2 - Average Improvement of 77 Times - Abstract
 
 1. Repeat the steps in [Element No.1 - At Least 10 Times Faster - Abstract](#element-no1---at-least-10-times-faster---abstract). __The minimum, maximum, and average improvements will display in the terminal.__
@@ -548,7 +550,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     python3 runAll.py -r 10 -m 6 -M 15
     ```
 
-    _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits.
+    _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits_.
 
     __Warning:__ Executing the [runAll.py](#runAll.py) script with large run counts, mode counts, or a combination thereof can greatly increase runtime and might cause a RAM overload and make the system unstable. However, the file runAll.py can be executed multiple times with a smaller value of run count each time and get a graph updated with the runtime values averaged till the current run each time.
 
