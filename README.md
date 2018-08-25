@@ -1,7 +1,44 @@
 # Efficient-Knapsack-based-approach-for-AVR-task-Demand
 
+## Acknowledgments
+
+<table width="100%" style="text-align: center" cellpadding="20">
+  <tr>
+    <td style="vertical-align:middle">
+        <a href="https://www.nsf.gov">
+            <img src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" alt="NSF" height="100px"/>
+        </a>
+    </td>
+    <td style="vertical-align:middle">
+        <a href="https://vt.edu">
+            <img src="https://www.assets.cms.vt.edu/images/HorizontalStacked/HorizontalStacked_RGB.svg" height="63px"/>
+        </a>
+    </td>
+    <td style="vertical-align:middle">
+        <a href="https://wayne.edu">
+            <img src="https://mac.wayne.edu/images/wsu_primary_horz_color.png" height="50px"/>
+        </a>
+    </td>
+  </tr>
+</table> 
+
+This research has been supported in part by the [US National
+Science  Foundation](https://www.nsf.gov/)  ([CNS](https://www.nsf.gov/div/index.jsp?div=CNS)  Grant  Nos. [1618185](https://nsf.gov/awardsearch/showAward?AWD_ID=1618185) \& [1618979](https://nsf.gov/awardsearch/showAward?AWD_ID=1618979)) and a [Thomas C. Rumble Graduate Fellowship](https://gradschool.wayne.edu/fellowships/rumble-fellowships) from
+[Wayne State University](https://wayne.edu).
+
+## Authors - Contact
+
+| Author | Department | University | Location | Email |
+| ------ | ---------- | ---------- | -------- | ----- |
+| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
+| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
+| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
+| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
+
 ## Table of Contents
 
+* [Acknowledgments](#acknowledgments)
+* [Authors - Contact](#authors---contact)
 * [Features](#features)
 * [Quickstart - Quick Evaluation](#quickstart---quick-evaluation)
   * [Option A - Open Virtual Appliance](#option-a---open-virtual-appliance)
@@ -38,9 +75,7 @@
   * [taskSet1.json](#taskset1json)
   * [taskSet2.json](#taskset2json)
   * [taskSetCustom.json](#tasksetcustomjson)
-* [Publication Information](#publication-information)
-  * [RTSS 2018 Publication](#rtss-2018-publication)
-  * [Authors - Contact](#authors---contact)
+* [RTSS 2018 Publication](#rtss-2018-publication)
 * [Appendix](#appendix)
 * [Appendix A - Dependencies](#appendix-a---dependencies)
 * [Appendix B - Tested System Specifications](#appendix-b---tested-system-specifications)
@@ -52,7 +87,6 @@
 * [Appendix F - Known Issues](#appendix-f---known-issues)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## Features
 
@@ -127,11 +161,13 @@ The remaining sections will guide evaluators through evaluating each claim indep
 
 1. In the terminal, navigate to the root folder of the cloned repository (the desktop folder if using the OVA) and __enter__:
 
-```sh
-python3 runAll.py -r 10
-```
+    ```sh
+    python3 runAll.py -r 10
+    ```
 
 2. Upon completion, a graph of algorithm runtime vs number of modes will display. This graph can be compared with the results resented in [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H). __The minimum, maximum, and average improvements will display in the terminal.__
+
+    _Warning: Completion time for __one run__ (the default) may take at least __16 hours__ for the DRT-based algorithm under __[Tested System Specifications](#tested-system-specifications)__. Executing the 10 runs in the above script may take __over 160 hours__._
 
 ### Element No.2 - Average Improvement of 77 Times - Abstract
 
@@ -520,7 +556,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     python3 runAll.py -r 10 -m 6 -M 15
     ```
 
-    _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits.
+    _Note: The above example is the __same process__ for generating the data presented in the publication. 10 runs x 2 algorithms x 10 mode splits_.
 
     __Warning:__ Executing the [runAll.py](#runAll.py) script with large run counts, mode counts, or a combination thereof can greatly increase runtime and might cause a RAM overload and make the system unstable. However, the file runAll.py can be executed multiple times with a smaller value of run count each time and get a graph updated with the runtime values averaged till the current run each time.
 
@@ -577,22 +613,11 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
     }
     ```
 
-## Publication Information
-
-### RTSS 2018 Publication
+## RTSS 2018 Publication
 
 _An Efficient Knapsack-Based Approach for Calculating the Worst-Case Demand of AVR Tasks_ by [Bijinemula et al.](https://waynestateprod-my.sharepoint.com/:f:/g/personal/ez9213_wayne_edu/Em0cgsbtXSRJs5vxJfcFpeAB-LUFyp5K6H0cxSClSs6Syg?e=NJsR2H) (Accepted)  
 Real-Time Systems Symposium ([RTSS](http://2018.rtss.org/)) 2018 - Main Real-Time Track  
 Nashville, Tennessee, USA
-
-### Authors - Contact
-
-| Author | Department | University | Location | Email |
-| ------ | ---------- | ---------- | -------- | ----- |
-| [Sandeep Kumar Bijinemula](https://www.linkedin.com/in/sandeep-bijinemula/) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | bsk1410@vt.edu |
-| [Aaron Willcock](https://www.linkedin.com/in/aaronwillcock/) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | aaron.willcock@wayne.edu |
-| [Thidapat Chantem](https://ece.vt.edu/people/profile/chantem) | Electrical and Computer Engineering | [Virginia Tech](https://vt.edu/index.html) | Arlington, VA, USA | tchantem@vt.edu |
-| [Nathan Fisher](https://engineering.wayne.edu/profile/dx3281) | Computer Science | [Wayne State University](https://wayne.edu/) | Detroit, MI, USA | fishern@wayne.edu |
 
 ## Appendix
 
