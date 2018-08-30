@@ -74,7 +74,7 @@ def NewMultiAVRgen(M):
         with open(taskSetFileName) as f:
             taskset = json.load(f)
 
-        rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])[1:]
+        rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])
         executionTimes = sorted(taskset['executionTimes'])
 
     #Start timer
