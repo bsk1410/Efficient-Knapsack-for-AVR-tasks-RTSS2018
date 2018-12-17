@@ -69,7 +69,7 @@ def NewMultiAVRgen(M):
             taskset = json.load(f)
 
         rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])[1:]
-        executionTimes = sorted(taskset['executionTimes'])
+        executionTimes = sorted(taskset['executionTimes'],reverse=True)
 
     #Start timer
     start = perf_counter()
