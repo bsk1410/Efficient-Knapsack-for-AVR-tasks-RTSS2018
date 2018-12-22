@@ -213,7 +213,7 @@ The remaining sections will guide evaluators through evaluating each claim indep
     python3 DRTAlg.py -t 1 -v
     ```
 
-    This will execute the Knapsack-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal
+    This will execute the DRT-based algorithm on the Table I Task Set - "Task Set Used by Existing Work". The time to compute the demand will display in the terminal
 
 3. To validate the demand calculations, we can view the last lines of the log files `NewAlgOutput.txt` and `DRTAlgOutput.txt`. In the terminal __enter__:
 
@@ -368,7 +368,7 @@ An Adaptive Variable Rate (AVR) Worst-Case Execution Times (WCET) profile specif
 
 #### DRT-Based Demand Calculation
 
-* To execute the Knapsack-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
+* To execute the DRT-Based Demand Calculation on the custom task set, repeat steps 1-4 above for [Knapsack-Based Demand Calculation](#Knapsack-Based-Demand-Calculation) replacing __`NewAlg.py`__ with __`DRTAlg.py`__ and __`NewAlgOutput.txt`__ with __`DRTAlgOutput.txt`__.  
 
 ## File-by-File Description and Operation
 
