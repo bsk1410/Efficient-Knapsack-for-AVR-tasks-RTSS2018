@@ -74,7 +74,7 @@ def DRTMultiAVRgen(M):
             taskset = json.load(f)
 
         boundarySpeeds = sorted(taskset['boundarySpeeds'])
-        executionTimes = sorted(taskset['executionTimes'])
+        executionTimes = sorted(taskset['executionTimes'], reverse = True)
 
     #Start timer
     start = perf_counter()
