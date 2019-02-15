@@ -6,8 +6,14 @@ from pprint import pprint               #Pretty Pring - Output formatting
 import random                           #RNG
 from bisect import bisect_left          #Provides would-be index of element to insert
 import sys                              #Command-line arguments
+import os                               #Directory check and creation
 
 def NewMultiAVRgen(M):
+
+    #If no directory exists...
+    if not os.path.exists('NewMultiAVROutputs/'):
+        #Create output directory
+        os.makedirs('NewMultiAVROutputs/')
 
     #Units
     #a_max, a_min : revolutions / min^2
@@ -68,8 +74,8 @@ def NewMultiAVRgen(M):
         with open(taskSetFileName) as f:
             taskset = json.load(f)
 
-        rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])[1:]
-        executionTimes = sorted(taskset['executionTimes'],reverse=True)
+        rightBoundarySpeeds = sorted(taskset['boundarySpeeds'])
+        executionTimes = sorted(taskset['executionTimes'], reverse = True)
 
     #Start timer
     start = perf_counter()

@@ -22,7 +22,7 @@ executionTimes = [965, 576, 424, 343, 277, 246]
 
 #Parse Command-Line Arguments
 parser = argparse.ArgumentParser(description='Run the Knapsack-Based AVR Task Demand Calculation algorithm by Bijinemula et al.', formatter_class=RawTextHelpFormatter)
-parser.add_argument('-t','--taskset',choices=['1','2','3'],metavar='#',default='1',help ='Enter the taskset number to run the algorithm on.\n1 - Use Task Set #1 in Bijinemula et al.\n2 - Use Task Set #2 in Bijinemula et al.\n3 - Use a custom task set defined in \'taskset.json\'')
+parser.add_argument('-t','--taskset',choices=['1','2','3'],metavar='#',default='1',help ='Enter the taskset number to run the algorithm on.\n1 - Use Task Set #1 in Bijinemula et al.\n2 - Use Task Set #2 in Bijinemula et al.\n3 - Use the custom, user-defined task set in \'taskSetCustom.json\'')
 parser.add_argument('-v','--verbose',action='store_true',help='Get detailed output')
 args = parser.parse_args()
 
