@@ -1,6 +1,6 @@
 from pprint import pprint
 diff = dict()
-with open('DRTAlgOutput.txt') as file1, open('NewAlgOutput.txt') as file2:
+with open('LP-1.txt') as file1, open('NewAlgOutput.txt') as file2:
     for line1, line2 in zip(file1, file2):
         p1 = line1.index('=')
         p2 = line2.index('=')
